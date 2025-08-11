@@ -1,0 +1,43 @@
+{
+  "intro": "Survole chaque lettre pour découvrir nos valeurs.",
+  "M": {
+    "title": "Méthode",
+    "description": "Approche structurée, objectifs clairs, outils concrets"
+  },
+  "H": {
+    "title": "Humain",
+    "description": "Humain est au cœur de ce que nous faisons, écouter, comprendre, accompagnement avec confiance et bienveillance"
+  },
+  "B": {
+    "title": "Bienveillance ",
+    "description": "Respect des différents parcours, écouter, accompagner"
+  },
+  "U": {
+    "title": "Unité",
+    "description": "La force d'un réseau, d'une équipe, et la collectivité."
+  },
+  "S1": {
+    "title": "Stratégie",
+    "description": "Vision claire et adaptée pour atteindre la croissance et la performance"
+  },
+  "I": {
+    "title": "Impact",
+    "description": "Génération de vrais résultats"
+  },
+  "N": {
+    "title": "Network",
+    "description": "Mise en relation, connexions professionnelles"
+  },
+  "E": {
+    "title": "Engagement",
+    "description": "Accompagnement sur mesure jusqu'à la réussite de nos clients"
+  },
+  "S2": {
+    "title": "Simplicité",
+    "description": "Accessible, clarté et facilité dans tous nos échanges"
+  },
+  "S3": {
+    "title": "Souplesse",
+    "description": "Capacité d'adaptation & ajustements rapides"
+  }
+}

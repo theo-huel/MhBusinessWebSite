@@ -1,0 +1,27 @@
+{
+  "home": {
+    "name": "Home"
+  },
+  "about": {
+    "name": "About"
+  },
+  "services": {
+    "name": "Our Services"
+  },
+  "team": {
+    "name": "Our Team"
+  },
+  "contact": {
+    "name": "Contact"
+  },
+  "rdvbutton": {
+    "text": "Make an Appointment"
+  },
+  "footer": {
+    "mh": "MH Business",
+    "p": "Your dedicated partner to boost your business. We support you from website design to administrative management, including visual identity.",
+    "link": "Quick Links",
+    "contact": "Contact Us",
+    "rights": "MH Business. All rights reserved."
+  }
+}

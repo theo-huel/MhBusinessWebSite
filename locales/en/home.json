@@ -1,0 +1,76 @@
+{
+  "about": {
+    "title": "Who is MH Business?",
+    "subtitle": "Your dedicated partner for entrepreneurial success.",
+    "text": "MH Business was born from the desire to support entrepreneurs in bringing their projects to life. Whether you're just starting out or in a growth phase, I provide the tools and support you need to reach your goals. My approach is personalized, pragmatic, and results-driven.",
+    "button": "Learn more about MH Business"
+  },
+  "services": {
+    "title": "Key Services",
+    "subtitle": "A full range of services to boost your business.",
+    "web": {
+      "title": "Website Creation",
+      "desc": "Design and development of modern, high-performance, SEO-optimized websites using Next.js, React, and Tailwind CSS."
+    },
+    "visual": {
+      "title": "Visual Identity & Printing",
+      "desc": "Logo creation, brand guidelines, and print management for your materials (business cards, flyers, signs)."
+    },
+    "admin": {
+      "title": "Administrative & Accounting Support",
+      "desc": "Assistance with administrative organization, process implementation, and connecting with accounting experts."
+    },
+    "button": "See all services"
+  },
+  "why": {
+    "title": "Why choose MH Business?",
+    "subtitle": "Tangible advantages for your growth.",
+    "approach": {
+      "title": "Personalized Approach:",
+      "desc": "Every support is unique, tailored to your specific needs and your business reality."
+    },
+    "expertise": {
+      "title": "Broad Expertise:",
+      "desc": "Benefit from a wide range of skills, from web development to strategic consulting."
+    },
+    "network": {
+      "title": "Trusted Network:",
+      "desc": "Access a network of trusted partners for services I don't handle directly."
+    },
+    "serenity": {
+      "title": "Time-Saving and Peace of Mind:",
+      "desc": "Delegate complex tasks and focus on your core business."
+    },
+    "imageAlt": "Illustration of advantages"
+  },
+  "testimonials": {
+    "title": "What my clients say",
+    "subtitle": "Client satisfaction is my greatest pride.",
+    "1": {
+      "quote": "Thanks to MH Business for being available and supportive in designing my marketing strategy, client targeting, and a working price offer.",
+      "author": "Hassan Vural",
+      "title": "HV | Conseil & gestion"
+    },
+    "2": {
+      "quote": "With MH Business’s support, managing my business admin has finally become smooth. A true relief!",
+      "author": "Marc L.",
+      "title": "Manager, 'Solutions BTP'"
+    },
+    "3": {
+      "quote": "MH Business’s strategic advice was key in launching my brand. Highly recommended!",
+      "author": "Clara V.",
+      "title": "Creator, 'Atelier Clara'"
+    }
+  },
+    "hero": {
+  "title": "“MH Business, when strategy turns into action”",
+  "btn1": "Discover my services",
+  "btn2": "Make an appointment"
+},
+"calltoaction": {
+  "h2": "Ready to boost your business?",
+  "p": "Whether it's for a website, a strong visual identity, or better management, MH Business is here for you.",
+  "btn": "Contact me today!"
+}
+
+}

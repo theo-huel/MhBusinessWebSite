@@ -1,0 +1,16 @@
+{
+  "pageTitle": "Contact MH Business",
+  "pageSubtitle": "Let’s discuss your project and how I can help you.",
+  "name": "Full Name",
+  "email": "Email Address",
+  "subject": "Subject",
+  "message": "Your Message",
+  "sendButton": "Send Message",
+  "sending": "Sending...",
+  "successMessage": "Your message was successfully sent!",
+  "error": "Error",
+  "defaultError": "Something went wrong.",
+  "serverError": "Server connection error. Please try again later.",
+  "directInfoTitle": "Direct Contact Information",
+  "responseCommitment": "I’m committed to getting back to you as soon as possible."
+}

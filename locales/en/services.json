@@ -1,0 +1,27 @@
+{
+  "pageTitle": "Our Support Services",
+  "pageSubtitle": "Comprehensive expertise for every stage of your development.",
+  "footerNote": "My approach is flexible: I can deliver these services directly or connect you with trusted partners from my network, depending on your needs and the complexity of your project.",
+  "services": {
+    "strategy": {
+      "title": "Business Strategy & Structuring",
+      "description": "• Strategic diagnosis (SWOT, Business Model Canvas, etc.)\n• Clarification of vision, mission, and goals\n• Structuring offer, internal organization, and priorities\n• Implementing KPIs and an action plan"
+    },
+    "b2b": {
+      "title": "B2B Business Development",
+      "description": "• Creating or optimizing commercial strategy\n• Defining target personas\n• Building an acquisition funnel\n• Sales support tools, pitch, team training\n• Establishing strategic partnerships"
+    },
+    "coaching": {
+      "title": "Operational Support & Coaching",
+      "description": "• Monitoring indicators, reporting, adjustments\n• Executive or commercial team coaching"
+    },
+    "network": {
+      "title": "Networking & Professional Relations",
+      "description": "• Connecting with independent salespeople, experts, or providers\n• Sourcing interns and young talent (marketing, finance, HR…)\n• Networking for specific projects (sales, purchase, partnerships)"
+    },
+    "training": {
+      "title": "Trainings & Strategic Workshops",
+      "description": "• Tailor-made workshops (strategy, business model, prospecting…)\n• B2B sales training\n• Seminars for executives or sales teams"
+    }
+  }
+}

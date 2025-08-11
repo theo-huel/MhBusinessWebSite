@@ -1,0 +1,31 @@
+{
+  "home": {
+    "name": "Accueil"
+  },
+  "about": {
+    "name": "À propos"
+    },
+  "services": {
+    "name": "Nos services"
+    },
+  "team": {
+    "name": "Notre Équipe"
+    },
+  "contact": {
+    "name": "Contact"
+    },
+  "rdvbutton": {
+    "text": "Prendre rendez-vous"
+    },
+  "footer": {
+    "mh": "MH Business",
+    "p": "Votre partenaire dédié pour propulser votre entreprise. Nous vous accompagnons de la conception de votre site web à la gestion administrative, en passant par l'identité visuelle.",
+    "link" : "Liens Rapides",
+    "contact" : "Contactez-nous",
+    "rights" : "MH Business. Tous droits réservés."
+
+}
+    
+    
+}
+

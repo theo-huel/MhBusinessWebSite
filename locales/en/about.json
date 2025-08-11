@@ -1,0 +1,34 @@
+{
+  "about": {
+    "title": "About Us",
+    "subtitle": "MH Business supports entrepreneurs and SMEs in their strategic and commercial development.",
+    "mission": {
+      "h3": "Mission",
+      "h2": "What you do today, for whom, and how",
+
+      "p1": "We support entrepreneurs and SMEs in their strategic and commercial development by providing practical tools, a network of selected and qualified partners, and above all, personalized human support tailored to their real needs.",
+      "p2": "We set SMART goals (Specific, Measurable, Achievable, Realistic, and Time-bound) by applying a customized, results-oriented approach.",
+      "p3": "Many SMEs set themselves 'non-SMART' goals",
+      "ex": "Example: \"I want to grow my revenue\"",
+      "p4": "We then help you turn it into a SMART goal\n\n",
+      "ex1": "Example: \"I want to increase my revenue by 20% by the end of the year by signing 5 new SME clients via LinkedIn and B2B events\""
+    },
+    "vision": {
+      "h3": "Vision",
+      "h2": "What you want to change in the long term, the impact you want to have",
+
+      "p1": "We want every entrepreneur, every project leader, every business, to have the means to succeed, regardless of their size or starting point.",
+      "p2": "We also believe in a positive culture of failure: try, fail, learn, start again... This is how we grow, build better, correct mistakes, and eventually succeed. MH Business is here to support you through each of these steps — without judgment, but with a human and personalized approach.",
+      "p3": "Our goal in the entrepreneurial world is to make sure everyone can access the best growth levers — a clear and tailored strategy, personalized support, and a high-quality network.",
+      "p4": "So what is our ultimate ambition?",
+      "p5": "To create a dynamic ecosystem, centered on people and able to adapt quickly. This ecosystem will connect the right people, the right ideas, and the right tools. An adaptive system that will help reach the defined goals. Today, a company’s strength lies in its ability to build smart connections, evolve quickly, and above all, move forward with its own values.",
+      "p6": "Let’s talk about a quote we love:",
+      "p67": "\"Coming together is a beginning, staying together is progress, working together is success\"",
+      "p7": "At MH Business, we created this one:",
+      "p70": "\"Trust within a team is key: it turns collective effort into exceptional results\""
+    },
+    "valeurs": {
+      "h3": "Values"
+    }
+  }
+}

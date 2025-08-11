@@ -1,0 +1,74 @@
+{
+  "about": {
+    "title": "À propos de nous",
+    "subtitle": "Votre partenaire dédié à la réussite entrepreneuriale.",
+    "text": "**MH Business**, est née de la volonté d'accompagner les entrepreneurs dans leur quotidien. Nous croyons que le succès d’une entreprise repose sur une stratégie claire, un accompagnement humain et un réseau solide. Nous mettons notre expertise au service des indépendants et PME pour structurer, développer et promouvoir leurs activités.",
+    "button": "En savoir plus sur MH Business"
+  },
+  "services": {
+    "title": "Nos Services d'Accompagnement",
+    "subtitle": "Une offre complète pour propulser votre entreprise.",
+    "web": {
+      "title": "Stratégie d’entreprise & Structuration"
+    },
+    "visual": {
+      "title": "Développement commercial B2B"
+        },
+    "admin": {
+      "title": "Accompagnement opérationnel & Coaching"
+        },
+    "button": "Voir tous les services"
+  },
+  "why": {
+    "title": "Pourquoi choisir MH Business ?",
+    "subtitle": "Des avantages concrets pour votre développement.",
+    "approach": {
+      "title": "Approche Personnalisée :",
+      "desc": "Chaque accompagnement est unique, adapté à vos besoins spécifiques..."
+    },
+    "expertise": {
+      "title": "Expertise Multiple :",
+      "desc": "Bénéficiez d'un large éventail de compétences..."
+    },
+    "network": {
+      "title": "Réseau de Confiance :",
+      "desc": "Accédez à un réseau de partenaires qualifiés..."
+    },
+    "serenity": {
+      "title": "Gain de Temps et Sérénité :",
+      "desc": "Déléguez les tâches complexes pour vous concentrer sur votre cœur de métier."
+    },
+    "imageAlt": "Illustration des avantages"
+  },
+  "testimonials": {
+    "title": "Ils racontent leur expérience",
+    "subtitle": "La satisfaction de mes clients, ma plus grande fierté.",
+    "1": {
+      "quote": "Merci à MH Business pour sa disponibilité aux questions et pour son accompagnement dans la conception du cadre marketing, du ciblage clients et d'une offre tarifiaire opérationnel.",
+      "author": "Hassan Vural",
+      "title": "HV | Conseil & gestion"
+    },
+    "2": {
+      "quote": "Grâce à l'accompagnement de MH Business, la gestion administrative...",
+      "author": "Marc L.",
+      "title": "Gérant, 'Solutions BTP'"
+    },
+    "3": {
+      "quote": "Le conseil stratégique de MH Business a été crucial...",
+      "author": "Clara V.",
+      "title": "Créatrice, 'Atelier Clara'"
+    }
+  },
+    "hero":{
+      "title" : "« MH Business, quand la stratégie devient action »",
+      "btn1" : "Découvrir nos services",
+      "btn2" :  "Discutons-en ?"
+    }
+    ,
+    "calltoaction":{
+      "h2" : "Stratégie. Structurer. Développer. Accompagner.",
+      "p" : "Que ce soit pour un site web, une identité visuelle forte ou une meilleure gestion, MH Business est là pour vous.",
+      "btn" :  "Contactez-moi dès aujourd'hui !"
+    }
+  
+}

@@ -1,0 +1,25 @@
+{
+  "team": {
+    "members": {
+      "Matis": {
+        "position": "CEO",
+        "description": "bLABALAZIDIJZEIHDZEUIHD"
+      },
+      "Pietro": {
+        "position": "Project Manager",
+        "description": "bLABALAZIDIJZEIHDZEUIHD"
+      },
+      "Theo":{
+        "position": "IT Manager",
+        "description": "Theo always working with joy, he brings happiness in the Team. He manages all the IT environment of the company."
+      }
+    },
+    "equipe": {
+      "title": "Our Team",
+      "subtitle": "Comprehensive expertise for every stage of your development."
+    },
+    "ensavoirplus": "Learn more"
+
+
+  }
+}

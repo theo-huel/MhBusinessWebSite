@@ -1,0 +1,25 @@
+{
+   "team": {
+    "members": {
+      "Matis":{
+        "position": "PDG",
+        "description": "bLABALAZIDIJZEIHDZEUIHD"
+      },
+      "Pietro":{
+        "position": "Chef de Projet",
+        "description": "bLABALAZIDIJZEIHDZEUIHD"
+      },
+      "Theo":{
+        "position": "Responsable Informatique",
+        "description": "Théo toujours dans la joie et la bonne humeur gère toute la structure informatique de l'entreprise."
+      }
+    },
+    "equipe": {
+      "title":"Notre équipe",
+      "subtitle": "Une expertise complète pour chaque étape de votre développement."
+      },
+      "ensavoirplus" : "En savoir plus"
+
+    }
+  
+}

@@ -1,0 +1,27 @@
+{
+  "pageTitle": "Nos services d'accompagnement",
+  "pageSubtitle": "Une expertise complète pour chaque étape de votre développement.",
+  "footerNote": "Mon approche est flexible : je peux réaliser ces prestations directement ou vous orienter vers des partenaires de confiance de mon réseau, selon vos besoins et la complexité du projet.",
+  "services": {
+    "strategy": {
+      "title": "Stratégie d’entreprise & Structuration",
+      "description": "• Diagnostic stratégique (SWOT, Business Model Canvas, etc.)\n• Clarification de la vision, de la mission et des objectifs\n• Structuration de l’offre, de l’organisation interne et des priorités\n• Mise en place de KPIs et d’un plan d’action"
+    },
+    "b2b": {
+      "title": "Développement commercial",
+      "description": "• Création ou optimisation de la stratégie commerciale\n• Définition des personas cibles\n• Construction d’un tunnel d’acquisition\n• Outils d’aide à la vente, pitch, formation des équipes\n• Mise en place de partenariats stratégiques"
+    },
+    "coaching": {
+      "title": "Accompagnement personnel & Coaching",
+      "description": "• Suivi d’indicateurs, reporting, ajustements\n• Coaching de dirigeant ou d’équipe commerciale"
+    },
+    "network": {
+      "title": "Mise en relation & réseau professionnel",
+      "description": "• Mise en lien avec des commerciaux indépendants, experts ou prestataires\n• Sourcing de stagiaires et jeunes talents (marketing, finance, RH…)\n• Mise en relation pour projets spécifiques (vente, achat, partenariat)"
+    },
+    "training": {
+      "title": "Formations & Ateliers stratégiques",
+      "description": "• Ateliers sur-mesure (stratégie, business model, prospection…)\n• Formations à la vente B2B\n• Séminaires pour dirigeants ou commerciaux"
+    }
+  }
+}

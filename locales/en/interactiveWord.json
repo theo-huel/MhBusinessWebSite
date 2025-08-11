@@ -1,0 +1,43 @@
+{
+  "intro": "Hover over each letter to discover our values.",
+  "M": {
+    "title": "Method",
+    "description": "Structured approach, clear objectives, practical tools"
+  },
+  "H": {
+    "title": "Human",
+    "description": "People are at the heart of what we do: listening, understanding, and providing support with trust and kindness"
+  },
+  "B": {
+    "title": "Kindness",
+    "description": "Failure is seen as a learning opportunity — we encourage perseverance and growth."
+  },
+  "U": {
+    "title": "Unity",
+    "description": "The strength of a network, a team, and collective action."
+  },
+  "S1": {
+    "title": "Strategy",
+    "description": "A clear and tailored vision to achieve growth and performance"
+  },
+  "I": {
+    "title": "Innovation",
+    "description": "Bringing fresh perspectives and concrete new ideas"
+  },
+  "N": {
+    "title": "Novelty",
+    "description": "Embracing change and curiosity. Let’s avoid stagnation."
+  },
+  "E": {
+    "title": "Commitment",
+    "description": "Tailored support until our clients succeed"
+  },
+  "S2": {
+    "title": "Simplicity",
+    "description": "Accessibility, clarity, and ease in all our interactions"
+  },
+  "S3": {
+    "title": "Flexibility",
+    "description": "Ability to adapt and make quick adjustments"
+  }
+}
