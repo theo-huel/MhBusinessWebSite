@@ -4,23 +4,26 @@ import MyButton from "./MyButton.jsx";
 import { useTranslation } from "react-i18next";
 import Icon from "./Icon";
 import FadeInOnScroll from "@/components/FadeInOnScroll.jsx";
+import FadeInOnScrollCitation from "@/components/FadeInOnScrollCitation.jsx";
+import FadeInOnScrollBottom from "@/components/FadeInOnScrollBottom.jsx";
+
 
 const HeroSection = () => {
   const { t } = useTranslation("home");
 
   return (
-    <section className="relative bg-gradient-to-r from-[#AD9551] to-[#AD9551] text-white py-24 md:py-32 overflow-hidden">
+    <section className="relative bg-gradient-to-r from-[#AD9551] to-[#AD9551] text-white py-24 md:py-25 overflow-hidden">
 
       {/* Contenu centré */}
       <div className="container mx-auto px-6 relative z-10 flex flex-col justify-center items-center text-center min-h-[10vh]">
-        <FadeInOnScroll delay={0.3}>
-          <h2 className="text-2xl md:text-4xl leading-tight mb-6 animate-slide-in-left">
-            {t("hero.title")}
-          </h2>
-        </FadeInOnScroll>
+        <FadeInOnScrollCitation delay={0.3}>
+            <h2 className="text-2xl md:text-4xl leading-tight mb-6 animate-slide-in-left">
+              {t("hero.title")}
+            </h2>
+        </FadeInOnScrollCitation>
 
 
-        <FadeInOnScroll delay={0.3}>
+        <FadeInOnScrollBottom delay={0.2}>
           <div className="flex gap-4 mt-4">
             <Link href="/services">
               <MyButton variant="black">
@@ -39,7 +42,7 @@ const HeroSection = () => {
               </MyButton>
             </Link>
           </div>
-        </FadeInOnScroll>
+        </FadeInOnScrollBottom>
       </div>
     </section>
   );

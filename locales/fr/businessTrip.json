@@ -1,0 +1,32 @@
+{
+  "trip": {
+    "title": "MH Business Trip",
+    "subtitle": "Voyagez, connectez, développez votre business",
+    "features": {
+      "travel": {
+        "title": "Voyages inspirants",
+        "desc": "Explorez des destinations stratégiques pour booster vos opportunités."
+      },
+      "network": {
+        "title": "Networking de haut niveau",
+        "desc": "Rencontrez des leaders et entrepreneurs influents."
+      },
+      "business": {
+        "title": "Développement commercial",
+        "desc": "Découvrez des marchés et clients potentiels."
+      },
+      "events": {
+        "title": "Événements exclusifs",
+        "desc": "Participez à des ateliers et conférences sur mesure."
+      },
+      "international": {
+        "title": "Ouverture internationale",
+        "desc": "Créez des connexions au-delà des frontières."
+      },
+      "strategy": {
+        "title": "Stratégie & Vision",
+        "desc": "Bâtissez un plan concret pour vos objectifs."
+      }
+    }
+  }
+}

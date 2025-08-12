@@ -1,62 +1,45 @@
 {
   "about": {
+    "valeurs": {
+      "h3": "Nos principes fondamentaux"
+    },
     "title": "À Propos de nous",
     "subtitle": "Stratégie. Accompagnement. Relationnel. Conseil.",
     "subtitle1": "MH Business aide les indépendants et les PME à se structurer, à développer leurs activités et d'agrandir leur réseau. Nous proposons un accompagnement complet, humain et personnalisé.",
     "subtitle2": "Vous ressentez ce besoin d'être accompagné, conseillé, ou tout simplement de grandir ?",
-
     "mission": {
-      "h3": "Mission",
+      "h3": "Notre mission",
       "h2": "Ce que tu fais aujourd'hui, pour qui, et comment",
-     
-      "p1": "Nous aidons les entrepreneurs et dirigeants de PME à structurer leur développement stratégique et commercial.",
-      "pp": "Nous mettons à disposition :", 
-      "pp1":"Des outils concrets",
-      "pp2":"Un réseau de partenaires sélectionnés",
-      "pp3":"Un accompagnement humain et personnalisé",
-      "p2": "Ensemble, nous nous fixons des objectifs SMART - spécifiques, mesurables, atteignables, réalistes et temporels dans le but d'avancer efficacement.",
-      "p3": "Beaucoup de PME se fixent des objectifs \"non SMART\"",
-      "tex": "Exemple d’objectif non SMART :",
-      "ex": "Exemple : \"Je veux développer mon chiffre d'affaires\"",
-      "p4": "Nous t'aidons alors à le transformer en SMART\n\n",
-      "tex1": "Exemple d’objectif  SMART :",
-      "ex1": "Exemple : \"Je veux augmenter mon chiffre d'affaires de 20% d'ici la fin de l'année, en signant 5 nouveaux clients PME via Linkedin et des évènements B2B\""
-      
+      "p1": "Aider les entrepreneurs et dirigeants de PME à structurer et accélérer leur développement stratégique et commercial.",
+      "pp": "Nous apportons :",
+      "pp1": "• Des outils concrets",
+      "pp2": "• Un réseau de partenaires qualifiés",
+      "pp3": "• Un accompagnement humain et personnalisé",
+      "p2": "Ensemble, nous fixons des objectifs SMART — spécifiques, mesurables, atteignables, réalistes et temporels — pour avancer efficacement et obtenir des résultats impactants."
     },
     "vision": {
-      "h3": "Vision",
+      "h3": "Notre vision",
       "h2": "Ce que tu veux changer à long terme, l'impact que tu veux avoir",
-
-      "p1": "Nous voulons donner à chaque entrepreneur, chaque entreprise, les moyens de réussir.",
-      "p2": "Notre ambition est de permettre à chacun d'avoir :",
-      "pp1": "Une stratégie claire et efficace",
-      "pp2": "Un accompagnement personnalisé",
-      "pp3": "Un réseau de qualité",
-      "p3": "La réussite n'arrive pas toujours du premier coup, il faut faire preuve de résilience mais surout de lever la tête, de comprendre ce qui ne fonctionne pas et d'adapter. De cette manière, on continue et on arrivera à la bonne recette magique.",
-      "p4": "Ne brulons pas les étapes, il faut progresser intelligemment tout en étant bien accompagné.",
-      "p5": "En conclusion, nous voulons créer cet écosystème humain basé sur la capacité d'adaptation et de résultats.",
-      "pp51": "Connecter les bonnes personnes",
-      "pp52": "Activer les meilleures idées",
-      "pp53": "Proposer les meilleurs outils",
+      "p1": "Donner à chaque entrepreneur et chaque entreprise les moyens concrets de réussir.",
+      "p2": "Nous croyons en :",
+      "pp1": "• Une stratégie claire et efficace",
+      "pp2": "• Un accompagnement personnalisé",
+      "pp3": "• Un réseau solide et pertinent",
+      "p3": "La réussite demande résilience et adaptation : comprendre ce qui ne fonctionne pas, ajuster et avancer.",
+      "p4": "Progressons intelligemment, étape par étape, avec les bons partenaires.",
+      "p5": "Notre objectif : créer un écosystème humain où l’on connecte les bonnes personnes, active les meilleures idées et propose les meilleurs outils pour atteindre des résultats durables.",
       "p6": "Aujourd'hui, le monde évolue tellement rapidement que la force d'une entreprise repose sur sa capacité à bien s'entourer, à rester fidèle à ses valeurs tout en s'adaptant aux défis du quotidien.",
-      "p7":"Parlons d'un citation que j'aime",
       "p77": " \"Se réunir est un début, rester ensemble est un progrès, travailler ensemble est la réussite\"",
       "p8": "Chez MH Business nous avons créé celle-ci : ",
       "p80": "\"La confiance dans une équipe est la clé : elle transforme l'effort collectif en résultats exceptionnels\""
     },
-    "valeurs": {
-      "h3": "Ce qui nous guide"
-  }, 
-  "parcours": {
+    "parcours": {
       "h3": "Mon parcours",
-      "p1": "1997, mon année de naissance. Belge mais avec de belles origines italiennes et pour les connaisseurs principalement de la ville du Vésuve : Naples.",
-      "p2" : "J'ai grandi dans un village de campagne, cumulé les jobs étudiants avant de prendre mon envol pour l'université de Mons pour étudier les finances et l'entrepreneuriat.",
-      "p3" : "Diplômé en 2021 en Ingénieur de gestion à finalité spécialisée (Finance & Entrepreneuriat). J'ai commencé mon parcours professionnel dans une startup de réseautage avec un peu plus de 300 entreprises.",
-      "p4" : "Cette aventure m'a permis d'acquérir une expérience précieuse.",
-      "p5" : "Après avoir cotoyés toutes ces entreprises, j'ai décidé de lancer MH Business pour accompagner les entrepreneurs dans leur quotidien.",
-      "p6" : "Tout n'a pas été toujours rose, ma vie a également pris un nouveau tournant, des voyages, une nouvelle rencontre, mon papa qui part vivre aux Etats-Unis pour y vivre son rêve, la perte de mon meilleur ami,… Mais dans la vie tant au niveau privé que professionnel, il faut faire preuve de Résilience et de Positivité.",
-      "p7" : "Aujourd'hui, je mets mon énergie au service de mes clients, en créant des liens forts et un accompagnement personnalisé. Je suis toujours disponible pour eux, ce qui permet de travailler dans un climat de totale confiance.",
-      "p8" : "Pour ceux qui me lisent, j'ai également une profonde passion pour  le football et le Padel. Un petit match? Je suis dispo aussi ! 😉"
+      "p1": "Né en 1997, belge aux racines napolitaines, j’ai grandi dans un village de campagne, enchaînant les jobs étudiants avant de rejoindre l’Université de Mons pour étudier la finance et l’entrepreneuriat.",
+      "p2": "Diplômé en 2021 en Ingénieur de gestion, j’ai débuté dans une startup de réseautage réunissant plus de 300 entreprises, une expérience qui m’a ouvert les portes du monde entrepreneurial.",
+      "p3": "Parmi les épreuves marquantes, j’ai eu l’honneur de recevoir le **Prix de l’AICM Entrepreneuriat** à l’université le 2 juillet 2020, et plus récemment, le 18 octobre 2024, j’ai relevé le défi personnel de gravir le mont Kilimandjaro (5 895 m).",
+      "p4": "Au fil des rencontres et des défis — voyages, nouvelles opportunités, départ de mon père pour vivre son rêve aux États-Unis, perte d’un ami proche — j’ai appris que résilience et positivité sont essentielles, autant dans la vie que dans les affaires.",
+      "p5": "C’est avec cet état d’esprit que j’ai fondé **MH Business**, pour accompagner les entrepreneurs au quotidien, créer des liens forts et bâtir une relation de confiance. Et en dehors du bureau, il se peut que vous me retrouviez sur un terrain de football ou de padel… alors, un match ? 😉"
     }
 
   }

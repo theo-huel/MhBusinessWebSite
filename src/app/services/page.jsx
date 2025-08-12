@@ -18,12 +18,12 @@ const ServicesPage = () => {
 
     const services = [
         {
-            iconName: "Globe",
+            iconName: "Map",
             title: t("services.strategy.title"),
             description: t("services.strategy.description"),
         },
         {
-            iconName: "Users",
+            iconName: "TrendingUp",
             title: t("services.b2b.title"),
             description: t("services.b2b.description"),
         },
@@ -33,29 +33,36 @@ const ServicesPage = () => {
             description: t("services.coaching.description"),
         },
         {
-            iconName: "Network",
+            iconName: "Share2",
             title: t("services.network.title"),
             description: t("services.network.description"),
         },
         {
-            iconName: "Laptop",
+            iconName: "GraduationCap",
             title: t("services.training.title"),
             description: t("services.training.description"),
+        },
+        {
+            iconName: "Target",
+            title: t("services.web.title"),
+            description: t("services.web.description"),
         }
     ];
 
     return (
         <main className="pt-10 bg-gray-50 mt-19">
             <section className="py-16 container mx-auto px-6">
-                <FadeInOnScroll delay={0.2}>
+                <FadeInOnScroll delay={0.1}>
                     <SectionTitle
                         title={t("pageTitle")}
                         subtitle={t("pageSubtitle")}
                     />
                 </FadeInOnScroll>
+                                <FadeInOnScrollBottom delay={0.4}>
+
                 <div className="max-w-6xl mx-auto space-y-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
-                        {services.slice(0, 3).map((service, index) => (
+                        {services.slice(0, 6).map((service, index) => (
                             <ServiceCard
                                 key={index}
                                 {...service}
@@ -65,7 +72,7 @@ const ServicesPage = () => {
 
                         ))}
                     </div>
-                    {services.length > 3 && (
+                    {/* {services.length > 3 && (
                         <div className="flex flex-wrap gap-8 justify-center">
                             {services.slice(3).map((service, index) => (
                                 <div className="w-full md:w-1/2 lg:w-1/3" key={index + 3}>
@@ -77,7 +84,7 @@ const ServicesPage = () => {
                                 </div>
                             ))}
                         </div>
-                    )}
+                    )} */}
 
                     <FadeInOnScrollBottom delay={0.2}>
                         <div className="text-center mt-12 text-gray-700 text-lg">
@@ -85,8 +92,10 @@ const ServicesPage = () => {
                         </div>
                     </FadeInOnScrollBottom>
                 </div>
+                </FadeInOnScrollBottom>
 
-                <FadeInOnScrollBottom delay={1}>
+
+                <FadeInOnScrollBottom delay={0.7}>
                     <ContactPage />
                 </FadeInOnScrollBottom>
 

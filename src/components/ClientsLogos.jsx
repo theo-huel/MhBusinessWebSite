@@ -5,15 +5,11 @@ import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 
 const logos = [
-  // { id: 1, name: 'Partenaire1', logoSrc: '/img/nealiaNet.png', url: 'https://partenaire1.com' },
-  // { id: 2, name: 'Partenaire2', logoSrc: '/img/HVLOGO.jpg', url: 'https://partenaire2.com' },
-  // { id: 3, name: 'Partenaire1', logoSrc: '/img/logo Degrave.jpg', url: 'https://partenaire1.com' },
   { src: '/img/nealiaNet.png', alt: 'Logo Client 1' },
   { src: '/img/HVLOGO.jpg', alt: 'Logo Client 2' },
   { src: '/img/logo Degrave.jpg', alt: 'Logo Client 3' },
   { src: '/img/imgMegabike.jpg', alt: 'Logo Client 4' },
 
-  // ... ajoutez tous vos logos ici
 ];
 
 const ClientsLogos = () => {

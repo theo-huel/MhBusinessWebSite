@@ -51,15 +51,16 @@ const Navbarlogo = ({ logoSrc = null }) => {
 
         {/* Sélecteur de langue */}
         <div className="relative ml-4">
+          <Link href='/trip'>
           <MyButton
-            onClick={() => setShowLangDropdown(!showLangDropdown)}
+            //onClick={() => setShowLangDropdown(!showLangDropdown)}
             variant="outline"
             className="p-2 flex items-center gap-2"
           >
-            <Icon name="Globe" className="w-5 h-5" />
-            <span className="hidden sm:inline">Language</span>
+            <Icon name="Plane" className="w-5 h-5" />
+            <span className="hidden sm:inline">MH Business Trip</span>
           </MyButton>
-
+          </Link>
           {showLangDropdown && (
             <div className="absolute right-0 mt-2 w-32 bg-white border border-gray-200 rounded shadow-lg z-50">
               {["fr", "en"].map((lng) => (

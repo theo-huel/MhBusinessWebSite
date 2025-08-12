@@ -16,12 +16,16 @@
       "description": "• Suivi d’indicateurs, reporting, ajustements\n• Coaching de dirigeant ou d’équipe commerciale"
     },
     "network": {
-      "title": "Mise en relation & réseau professionnel",
-      "description": "• Mise en lien avec des commerciaux indépendants, experts ou prestataires\n• Sourcing de stagiaires et jeunes talents (marketing, finance, RH…)\n• Mise en relation pour projets spécifiques (vente, achat, partenariat)"
+      "title": "Mise en relation & Réseau professionnel",
+      "description": "• Mise en lien avec des commerciaux indépendants, experts ou prestataires\n• Sourcing de stagiaires et jeunes talents (marketing, finance, RH…)\n• Mise en relation avec des partenaires stratégiques\n• Business Network"
     },
     "training": {
       "title": "Formations & Ateliers stratégiques",
       "description": "• Ateliers sur-mesure (stratégie, business model, prospection…)\n• Formations à la vente B2B\n• Séminaires pour dirigeants ou commerciaux"
+    },
+    "web": {
+      "title": "Stratégie marketing & Visibilité digitale",
+      "description": "• Création et optimisation de pages LinkedIn \n• Stratégie editoriale \n•  Création de sites web One-Page modernes et performants \n• Image de marque \n•"
     }
   }
 }

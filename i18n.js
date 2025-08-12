@@ -23,6 +23,8 @@ import contactFr from './locales/fr/contact.json';
 import navbarFr from './locales/fr/navbar.json';
 import interactiveFr from './locales/fr/interactiveWord.json';
 import clientsFr from './locales/fr/clients.json';
+import businessTripFr from './locales/fr/businessTrip.json';
+
 
 
 
@@ -52,7 +54,8 @@ i18n
         contact:contactFr,
         navbar:navbarFr,
         interactiveWord:interactiveFr,
-        clients:clientsFr
+        clients:clientsFr,
+        businessTrip:businessTripFr
 
 
       },

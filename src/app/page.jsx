@@ -11,6 +11,7 @@ import Icon from '../components/Icon.jsx';
 import Link from 'next/link';
 import ReactMarkdown from 'react-markdown'
 import FadeInOnScroll from "@/components/FadeInOnScroll.jsx";
+import FadeInOnScrollBottom from "@/components/FadeInOnScrollBottom.jsx";
 import MyButton from "../components/MyButton.jsx";
 
 export default function Home() {
@@ -21,52 +22,50 @@ export default function Home() {
 
   return (
     <main className="pt-20 mt-19">
-      <FadeInOnScroll delay={0.1}>
+      {/* <FadeInOnScroll delay={0.1}> */}
         <HeroSection />
-      </FadeInOnScroll>
+      {/* </FadeInOnScroll> */}
 
 
       {/* Section À Propos */}
       <section className="py-16 bg-gray-50">
+        <FadeInOnScrollBottom delay={0.6}>
+
         <div className="container mx-auto px-6 text-center">
-          <FadeInOnScroll delay={0.2}>
             <SectionTitle
               title={a("about.title")}
-              subtitle={a("about.subtitle")}
               subtitle1={a("about.subtitle1")}
               subtitle2={a("about.subtitle2")}
             />
-          </FadeInOnScroll>
-
-          <FadeInOnScroll delay={0.2}>
-            <div className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
+             {/* <div className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
               <ReactMarkdown>{t("about.text")}</ReactMarkdown>
-            </div>
-          </FadeInOnScroll>
+            </div> */}
+
+           
 
           <FadeInOnScroll delay={0.2}>
-            <Link href="/services">
+            <Link href="/about">
               <MyButton variant="primary">
                 {t("about.button")} <Icon name="ChevronRight" className="inline-block w-5 h-5 mb-1" />
               </MyButton>
             </Link>
           </FadeInOnScroll>
         </div>
+                  </FadeInOnScrollBottom>
+
 
       </section>
 
       {/* Section Services */}
       <section className="py-16 bg-white">
-        <FadeInOnScroll delay={0.2}>
+        <FadeInOnScrollBottom delay={0.2}>
 
           <div className="container mx-auto px-6">
-            <FadeInOnScroll delay={0.2}>
               <SectionTitle
                 title={s("pageTitle")}
                 subtitle={s("pageSubtitle")}
                 className="transition-transform transform hover:scale-105"
               />
-            </FadeInOnScroll>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
               <ServiceCard
@@ -89,17 +88,17 @@ export default function Home() {
               />
             </div>
 
-            <FadeInOnScroll delay={0.2}>
+            <FadeInOnScrollBottom delay={0.2}>
               <div className="text-center mt-12">
-                <Link href="/services">
+                <Link href="/about">
                   <MyButton variant="primary">
                     {t("about.button")} <Icon name="ChevronRight" className="inline-block w-5 h-5 ml-2 mb-1" />
                   </MyButton>
                 </Link>
               </div>
-            </FadeInOnScroll>
+            </FadeInOnScrollBottom>
           </div>
-        </FadeInOnScroll>
+        </FadeInOnScrollBottom>
       </section>
 
       {/* Témoignages */}
@@ -117,9 +116,24 @@ export default function Home() {
                     quote={t("testimonials.1.quote")}
                     author={t("testimonials.1.author")}
                     title={t("testimonials.1.title")}
-                    imageSrc="/img/HVlogo.jpeg"
-                    imageSizeClasses="w-40 h-40"
-                  />
+                    imageSrc="/img/HasanVural.svg"
+                    imageWidth="200"
+                    imageHeight="200"
+                    imageScale="140"
+                    
+                    />               
+                </FadeInOnScroll>
+                <FadeInOnScroll delay={0.2}>
+                  <TestimonialCard
+                    quote={t("testimonials.2.quote")}
+                    author={t("testimonials.2.author")}
+                    title={t("testimonials.2.title")}
+                    imageSrc="/img/NaeliaNet.svg"
+                    imageWidth="100"
+                    imageHeight="100"
+                    imageScale="150"
+                    
+                    />               
                 </FadeInOnScroll>
                 {/* <TestimonialCard
               quote={t("testimonials.2.quote")}
