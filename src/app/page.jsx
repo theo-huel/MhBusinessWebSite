@@ -29,7 +29,7 @@ export default function Home() {
 
       {/* Section À Propos */}
       <section className="py-16 bg-gray-50">
-        <FadeInOnScrollBottom delay={0.6}>
+        <FadeInOnScrollBottom delay={0.2}>
 
         <div className="container mx-auto px-6 text-center">
             <SectionTitle

@@ -15,6 +15,7 @@ const CallToAction = ({}) => {
 
   if (pathname === "/contact" || pathname === "/services") return null;
   return (
+    <main className='bg-white'>
     <section className="bg-[#AD9551] text-white py-20 rounded-xl mx-auto max-w-6xl my-20 shadow-xl">
       <div className="container mx-auto px-6 text-center">
         <h2 className="text-4xl font-extrabold mb-8">{t("calltoaction.h2")}</h2>
@@ -30,6 +31,7 @@ const CallToAction = ({}) => {
 
       </div>
     </section>
+    </main>
   )
 };
 export default CallToAction;
