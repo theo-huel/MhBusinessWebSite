@@ -47,8 +47,12 @@ export default function AboutPage() {
                         {/* SECTION MISSION */}
 
                         <div className="flex-1 text-center md:text-center">
-                                <h3 className="text-4xl font-extrabold text-gray-900 mb-2">{t("about.mission.h3")}</h3>
-                                <h2 className="text-xl italic text-gray-600 mb-8">{t("about.mission.h2")}</h2>
+                            <SectionTitle
+                        title={t("about.mission.h3")}
+                        subtitle={t("about.mission.h2")}
+                    />
+                                {/* <h3 className="text-4xl font-extrabold text-gray-900 mb-2">{t("about.mission.h3")}</h3>
+                                <h2 className="text-xl italic text-gray-600 mb-8">{t("about.mission.h2")}</h2> */}
 
                             <div className="space-y-6 text-gray-700 text-lg leading-relaxed ">
                                     <p>{t("about.mission.p1")}</p>

@@ -5,10 +5,12 @@ import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 
 const logos = [
-  { src: '/img/nealiaNet.png', alt: 'Logo Client 1' },
-  { src: '/img/HVLOGO.jpg', alt: 'Logo Client 2' },
-  { src: '/img/logo Degrave.jpg', alt: 'Logo Client 3' },
-  { src: '/img/imgMegabike.jpg', alt: 'Logo Client 4' },
+  { src: '/img/NaeliaNet.svg', alt: 'Logo Client 1', imageWidth: "200", imageHeight: "200", imageScale: "160" },
+  { src: '/img/HasanVural.svg', alt: 'Logo Client 2', imageWidth: "200", imageHeight: "200", imageScale: "140" },
+    { src: '/img/ItinéraireBis.svg', alt: 'Logo Client 3',imageWidth: "200", imageHeight: "200", imageScale: "140" },
+    { src: '/img/Jtoit.png', alt: 'Logo Client 3' , imageWidth: "200", imageHeight: "200", imageScale: "140" },
+  { src: '/img/logo Degrave.jpg', alt: 'Logo Client 3',imageWidth: "150", imageHeight: "200", imageScale: "100" },
+  { src: '/img/imgMegabike.jpg', alt: 'Logo Client 4' ,imageWidth: "100", imageHeight: "200", imageScale: "140" },
 
 ];
 
@@ -73,13 +75,15 @@ const ClientsLogos = () => {
           style={{ gap: '60px', width: 'max-content' }}
         >
           {logos.map((logo, index) => (
-            <div key={index} className="flex-shrink-0 w-24">
+            <div key={index} className="flex-shrink-0 w-35 flex items-center justify-center overflow-hidden mb-2">
+
               <Image
                 src={logo.src}
                 alt={logo.alt}
-                width={96}
-                height={48}
-                style={{ objectFit: 'contain' }}
+                width={logo.imageWidth}
+                height={logo.imageHeight}
+                className={`object-contain scale-${logo.imageScale}`}
+
               />
             </div>
           ))}

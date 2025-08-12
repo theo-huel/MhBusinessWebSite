@@ -20,7 +20,7 @@ const ServiceCard = ({ iconName, title, subtitle, description, isOpen, onToggle,
     </>
   );
 
-  const baseClasses =   "bg-white rounded-xl shadow-lg p-8 overflow-hidden transform transition duration-300 ease-in-out hover:scale-105 border border-gray-100 cursor-pointer";
+  const baseClasses =   "bg-white rounded-xl shadow-lg overflow-hidden transform transition duration-300 ease-in-out hover:scale-105 border border-gray-100 cursor-pointer";
 
 
   if (href) {

@@ -18,7 +18,7 @@ const TestimonialCard = ({ quote, author, title, imageSrc, onToggle, imageWidth,
         alt={`Photo de ${author}`}
         width={imageWidth} 
         height={imageHeight} 
-        style={{ left: '100px' }} 
+        style={{ left: '0px' }} 
         className={`object-cover scale-${imageScale}`}
         onError={(e) => {
           e.currentTarget.src =
