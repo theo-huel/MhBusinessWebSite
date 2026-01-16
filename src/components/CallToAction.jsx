@@ -12,18 +12,16 @@ const CallToAction = ({}) => {
   if (pathname === "/contact" || pathname === "/services") return null;
 
   return (
-    // S'assure que le conteneur principal est bien blanc
-    <main className='bg-white w-full'>
+    // CORRECTION :
+    // 1. bg-white : Fond blanc forcé sur toute la largeur.
+    // 2. py-10 md:py-20 : On utilise du PADDING (remplissage) au lieu de margin. 
+    //    Le blanc va donc remplir l'espace en haut et en bas.
+    <div className='bg-white w-full py-10 md:py-20'>
       
-      {/* Changements de style :
-         1. bg-white : Le fond de la carte devient blanc.
-         2. border border-[#AD9551] : On ajoute une bordure dorée fine.
-         3. text-[#AD9551] : Le texte devient doré.
-      */}
       <section className="bg-white text-[#AD9551] border border-[#AD9551] rounded-xl shadow-lg 
                           max-w-6xl mx-4 md:mx-auto 
-                          my-10 md:my-20 
-                          py-12 md:py-20">
+                          py-8 md:py-16"> 
+                          {/* J'ai aussi légèrement ajusté le padding interne de la carte */}
         
         <div className="container mx-auto px-4 md:px-6 text-center">
           
@@ -33,9 +31,6 @@ const CallToAction = ({}) => {
 
           <div className="flex justify-center">
             <Link href="/services">
-              {/* Note: Ici, il faudra peut-être changer 'variant' si votre bouton secondaire
-                 est blanc sur blanc. On veut probablement un bouton plein (doré) ici.
-              */}
               <MyButton variant="primary"> 
                 {t("hero.btn2")}
               </MyButton>
@@ -44,7 +39,7 @@ const CallToAction = ({}) => {
 
         </div>
       </section>
-    </main>
+    </div>
   );
 };
 
