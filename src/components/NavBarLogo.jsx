@@ -17,7 +17,7 @@ const Navbarlogo = ({ logoSrc = null }) => {
     { name: t("home.name"), href: "/" },
     { name: t("about.name"), href: "/about" },
     { name: t("services.name"), href: "/services" },
-    { name: t("team.name"), href: "/team" },
+    //{ name: t("team.name"), href: "/team" },
     { name: t("contact.name"), href: "/contact" },
   ];
 
@@ -51,18 +51,19 @@ const Navbarlogo = ({ logoSrc = null }) => {
 
         {/* Sélecteur de langue */}
         <div className="relative ml-4">
-          <Link href='/trip'>
+          {/* <Link href='/trip'> */}
           <MyButton
-            //onClick={() => setShowLangDropdown(!showLangDropdown)}
+            onClick={() => setShowLangDropdown(!showLangDropdown)}
             variant="outline"
             className="p-2 flex items-center gap-2"
           >
-            <Icon name="Plane" className="w-5 h-5" />
-            <span className="hidden sm:inline">MH Business Trip</span>
+            {/* <Icon name="Plane" className="w-5 h-5" />
+            <span className="hidden sm:inline">MH Business Trip</span> */}
+            <Icon name="Globe" className="w-5 h-5" />
           </MyButton>
-          </Link>
+          {/* </Link> */} 
           {showLangDropdown && (
-            <div className="absolute right-0 mt-2 w-32 bg-white border border-gray-200 rounded shadow-lg z-50">
+            <div className="absolute right-0 mt-2 w-32 bg-white border border-gray-500 rounded shadow-lg z-50">
               {["fr", "en"].map((lng) => (
                 <button
                   key={lng}
@@ -70,7 +71,7 @@ const Navbarlogo = ({ logoSrc = null }) => {
                     i18n.changeLanguage(lng);
                     setShowLangDropdown(false);
                   }}
-                  className="w-full text-left px-4 py-2 hover:bg-gray-100"
+                  className="w-full text-left text-black px-4 py-2 hover:bg-[#AD9551]"
                 >
                   {lng === "fr" ? "Français" : "English"}
                 </button>
