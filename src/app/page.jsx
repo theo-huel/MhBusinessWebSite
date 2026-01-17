@@ -19,48 +19,30 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { useState, useRef } from 'react';
 
-
 export default function Home() {
   const { t } = useTranslation("home");
   const { t: s } = useTranslation("services");
   const { t: a } = useTranslation("about");
 
+  // --- ÉTATS SÉPARÉS POUR CHAQUE CARROUSEL ---
+  const [activeServiceIndex, setActiveServiceIndex] = useState(0);
+  const [activeTestimonialIndex, setActiveTestimonialIndex] = useState(0);
 
-  const [activeIndex, setActiveIndex] = useState(0);
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
+  // Refs pour Services
+  const prevRefServices = useRef(null);
+  const nextRefServices = useRef(null);
+
+  // Refs pour Témoignages
+  const prevRefTestimonials = useRef(null);
+  const nextRefTestimonials = useRef(null);
 
   const services = [
-    {
-      iconName: "Map",
-      title: s("services.strategy.title"),
-      description: s("services.strategy.description"),
-    },
-    {
-      iconName: "TrendingUp",
-      title: s("services.b2b.title"),
-      description: s("services.b2b.description"),
-    },
-    {
-      iconName: "Handshake",
-      title: s("services.coaching.title"),
-      description: s("services.coaching.description"),
-    },
-    {
-      iconName: "Share2",
-      title: s("services.network.title"),
-      description: s("services.network.description"),
-    },
-    {
-      iconName: "GraduationCap",
-      title: s("services.training.title"),
-      description: s("services.training.description"),
-    },
-    {
-      iconName: "Target",
-      title: s("services.web.title"),
-      description: s("services.web.description"),
-    }
+    { iconName: "Map", title: s("services.strategy.title"), description: s("services.strategy.description") },
+    { iconName: "TrendingUp", title: s("services.b2b.title"), description: s("services.b2b.description") },
+    { iconName: "Handshake", title: s("services.coaching.title"), description: s("services.coaching.description") },
+    { iconName: "Share2", title: s("services.network.title"), description: s("services.network.description") },
+    { iconName: "GraduationCap", title: s("services.training.title"), description: s("services.training.description") },
+    { iconName: "Target", title: s("services.web.title"), description: s("services.web.description") }
   ];
 
   const temoignages = [
@@ -69,43 +51,33 @@ export default function Home() {
       author: t("testimonials.1.author"),
       title: t("testimonials.1.title"),
       imageSrc: "/img/HasanVural.svg",
-      imageWidth: "200",
-      imageHeight: "200",
-      imageScale: "140"
+      imageWidth: "200", imageHeight: "200", imageScale: "140"
     },
     {
       quote: t("testimonials.2.quote"),
       author: t("testimonials.2.author"),
       title: t("testimonials.2.title"),
       imageSrc: "/img/NaeliaNet.svg",
-      imageWidth: "200",
-      imageHeight: "200",
-      imageScale: "150"
+      imageWidth: "200", imageHeight: "200", imageScale: "150"
     },
   ];
+
   return (
-    <main className="pt-20 mt-19">
-      {/* <FadeInOnScroll delay={0.1}> */}
+    // Ajout de pb-10 pour éviter que le footer colle trop
+    <main className="pt-24 pb-10 overflow-x-hidden"> 
+      
       <HeroSection />
-      {/* </FadeInOnScroll> */}
 
-
-      {/* Section À Propos */}
-      <section className="py-16 bg-gray-50">
+      {/* --- Section À Propos --- */}
+      <section className="py-12 md:py-16 bg-gray-50">
         <FadeInOnScrollBottom delay={0.2}>
-
-          <div className="container mx-auto px-6 text-center">
+          <div className="container mx-auto px-4 md:px-6 text-center">
             <SectionTitle
               title={a("about.title")}
               subtitle1={a("about.subtitle1")}
               subtitle2={a("about.subtitle2")}
             />
-            {/* <div className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
-              <ReactMarkdown>{t("about.text")}</ReactMarkdown>
-            </div> */}
-
-
-
+            
             <FadeInOnScroll delay={0.2}>
               <Link href="/about">
                 <MyButton variant="primary">
@@ -115,32 +87,33 @@ export default function Home() {
             </FadeInOnScroll>
           </div>
         </FadeInOnScrollBottom>
-
-
       </section>
 
-
-      {/* Section Services */}
-      <section className="py-16 bg-white">
+      {/* --- Section Services --- */}
+      <section className="py-12 md:py-20 bg-white">
         <FadeInOnScrollBottom delay={0.2}>
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-4 md:px-6">
             <SectionTitle
               title={s("pageTitle")}
               subtitle={s("pageSubtitle")}
-              className="transition-transform transform hover:scale-105"
+              className="transition-transform transform hover:scale-105 mb-8 md:mb-12"
             />
 
-            <div className="relative ml-50 mr-50">
-              {/* Boutons navigation */}
+            {/* Conteneur Carrousel Responsive */}
+            <div className="relative max-w-7xl mx-auto">
+              
+              {/* Boutons navigation (Cachés sur mobile "hidden", visibles sur tablette/desktop "md:block") */}
               <button
-                ref={prevRef}
-                className="absolute -left-6 top-1/2 z-10 bg-white text-[#AD9551] text-center p-2 rounded-full shadow hover:scale-110 hover:text-[#AD9551]"
+                ref={prevRefServices}
+                className="hidden md:block absolute -left-4 lg:-left-12 top-1/2 z-10 -translate-y-1/2 bg-white text-[#AD9551] p-3 rounded-full shadow-lg hover:scale-110 hover:bg-[#AD9551] hover:text-white transition-all"
+                aria-label="Previous Service"
               >
                 ◀
               </button>
               <button
-                ref={nextRef}
-                className="absolute -right-6 top-1/2 z-10 bg-white text-[#AD9551] text-center p-2 rounded-full shadow hover:scale-110 hover:text-[#AD9551]"
+                ref={nextRefServices}
+                className="hidden md:block absolute -right-4 lg:-right-12 top-1/2 z-10 -translate-y-1/2 bg-white text-[#AD9551] p-3 rounded-full shadow-lg hover:scale-110 hover:bg-[#AD9551] hover:text-white transition-all"
+                aria-label="Next Service"
               >
                 ▶
               </button>
@@ -149,36 +122,34 @@ export default function Home() {
                 modules={[Navigation]}
                 loop={true}
                 centeredSlides={true}
-                spaceBetween={2}
-                slidesPerView={1.2}
+                spaceBetween={20} // Espace un peu plus aéré
+                // Configuration Responsive
                 breakpoints={{
-                  768: { slidesPerView: 2.2 },
-                  1024: { slidesPerView: 3 } // 3 slides visibles = gauche / centre / droite
+                  0: { slidesPerView: 1.1, spaceBetween: 15 }, // Mobile : on voit un peu le suivant pour inciter au swipe
+                  640: { slidesPerView: 2, spaceBetween: 20 }, // Tablette
+                  1024: { slidesPerView: 3, spaceBetween: 30 } // Desktop
                 }}
-                onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+                onSlideChange={(swiper) => setActiveServiceIndex(swiper.realIndex)}
                 onBeforeInit={(swiper) => {
-                  swiper.params.navigation.prevEl = prevRef.current;
-                  swiper.params.navigation.nextEl = nextRef.current;
+                  swiper.params.navigation.prevEl = prevRefServices.current;
+                  swiper.params.navigation.nextEl = nextRefServices.current;
                 }}
-                className="!overflow-hidden"
-
+                className="!overflow-visible md:!overflow-hidden py-4" // overflow-visible sur mobile permet de ne pas couper les ombres
               >
                 {services.map((service, index) => {
-                  const isActive = index === activeIndex;
+                  const isActive = index === activeServiceIndex;
                   return (
-                    <SwiperSlide key={index} >
+                    <SwiperSlide key={index} className="h-full">
                       <div
-                        className={`transition-all duration-300 ease-in-out ${isActive
-                          ? "scale-105 opacity-100"
-                          : "scale-90 opacity-50"
-                          }`}
+                        className={`transition-all duration-500 ease-out h-full ${
+                          isActive ? "scale-100 opacity-100" : "scale-95 opacity-60 blur-[1px]"
+                        }`}
                       >
                         <ServiceCardCarrousel
                           iconName={service.iconName}
                           title={service.title}
                           description={service.description}
                           href="/services"
-
                         />
                       </div>
                     </SwiperSlide>
@@ -188,8 +159,8 @@ export default function Home() {
             </div>
 
             <FadeInOnScrollBottom delay={0.2}>
-              <div className="text-center mt-12">
-                <Link href="/about">
+              <div className="text-center mt-10 md:mt-16">
+                <Link href="/services">
                   <MyButton variant="primary">
                     {t("about.button")}
                     <Icon name="ChevronRight" className="inline-block w-5 h-5 ml-2 mb-1" />
@@ -201,25 +172,30 @@ export default function Home() {
         </FadeInOnScrollBottom>
       </section>
 
-      {/* Section Témoignages */}
-      <section className="py-16 bg-white">
+      {/* --- Section Témoignages --- */}
+      <section className="py-12 md:py-20 bg-gray-50">
         <FadeInOnScrollBottom delay={0.2}>
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-4 md:px-6">
             <SectionTitle
               title={t("testimonials.title")}
               subtitle={t("testimonials.subtitle")}
+              className="mb-8 md:mb-12"
             />
 
-            <div className="relative ml-50 mr-50">
+            <div className="relative max-w-7xl mx-auto">
+              
+              {/* Boutons navigation spécifiques aux témoignages */}
               <button
-                ref={prevRef}
-                className="absolute -left-6 top-1/2 z-10 bg-[#AD9551] text-white text-center p-2 rounded-full shadow hover:bg-white hover:text-[#AD9551]"
+                ref={prevRefTestimonials}
+                className="hidden md:block absolute -left-4 lg:-left-12 top-1/2 z-10 -translate-y-1/2 bg-[#AD9551] text-white p-3 rounded-full shadow-lg hover:bg-white hover:text-[#AD9551] border border-[#AD9551] transition-all"
+                aria-label="Previous Testimonial"
               >
                 ◀
               </button>
               <button
-                ref={nextRef}
-                className="absolute -right-6 top-1/2 z-10 bg-[#AD9551] text-white text-center p-2 rounded-full shadow hover:bg-white hover:text-[#AD9551]"
+                ref={nextRefTestimonials}
+                className="hidden md:block absolute -right-4 lg:-right-12 top-1/2 z-10 -translate-y-1/2 bg-[#AD9551] text-white p-3 rounded-full shadow-lg hover:bg-white hover:text-[#AD9551] border border-[#AD9551] transition-all"
+                aria-label="Next Testimonial"
               >
                 ▶
               </button>
@@ -228,29 +204,27 @@ export default function Home() {
                 modules={[Navigation]}
                 loop={true}
                 centeredSlides={true}
-                spaceBetween={2}
-                slidesPerView={1.2}
+                spaceBetween={20}
                 breakpoints={{
-                  768: { slidesPerView: 2.2 },
-                  1024: { slidesPerView: 3 } // 3 slides visibles = gauche / centre / droite
+                  0: { slidesPerView: 1.1, spaceBetween: 15 },
+                  640: { slidesPerView: 1.5, spaceBetween: 20 }, // Un peu plus large pour les témoignages
+                  1024: { slidesPerView: 3, spaceBetween: 30 }
                 }}
-                onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+                onSlideChange={(swiper) => setActiveTestimonialIndex(swiper.realIndex)}
                 onBeforeInit={(swiper) => {
-                  swiper.params.navigation.prevEl = prevRef.current;
-                  swiper.params.navigation.nextEl = nextRef.current;
+                  swiper.params.navigation.prevEl = prevRefTestimonials.current;
+                  swiper.params.navigation.nextEl = nextRefTestimonials.current;
                 }}
-                className="!overflow-hidden"
-
+                className="!overflow-visible md:!overflow-hidden py-4"
               >
                 {temoignages.map((temoignage, index) => {
-                  const isActive = index === activeIndex;
+                  const isActive = index === activeTestimonialIndex;
                   return (
-                    <SwiperSlide key={index} >
+                    <SwiperSlide key={index} className="h-full">
                       <div
-                        className={`transition-all duration-300 ease-in-out ${isActive
-                          ? "scale-105 opacity-100"
-                          : "scale-90 opacity-50"
-                          }`}
+                        className={`transition-all duration-500 ease-out h-full ${
+                          isActive ? "scale-100 opacity-100" : "scale-90 opacity-50"
+                        }`}
                       >
                         <TestimonialCard
                           quote={temoignage.quote}
@@ -269,7 +243,7 @@ export default function Home() {
             </div>
 
             <FadeInOnScrollBottom delay={0.2}>
-              <div className="text-center mt-12">
+              <div className="text-center mt-10 md:mt-16">
                 <Link href="/about">
                   <MyButton variant="primary">
                     {t("about.button")}
@@ -281,48 +255,6 @@ export default function Home() {
           </div>
         </FadeInOnScrollBottom>
       </section>
-
-
-      {/* Témoignages */}
-      {/* <section className="py-16 bg-white">
-        <FadeInOnScroll delay={0.2}>
-          <div className="container mx-auto px-6">
-            <SectionTitle
-              title={t("testimonials.title")}
-              subtitle={t("testimonials.subtitle")}
-            />
-            <div className="max-w-6xl mx-auto space-y-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 items-start">
-                <FadeInOnScroll delay={0.2}>
-                  <TestimonialCard
-                    quote={t("testimonials.1.quote")}
-                    author={t("testimonials.1.author")}
-                    title={t("testimonials.1.title")}
-                    imageSrc="/img/HasanVural.svg"
-                    imageWidth="200"
-                    imageHeight="200"
-                    imageScale="140"
-
-                  />
-                </FadeInOnScroll>
-                <FadeInOnScroll delay={0.2}>
-                  <TestimonialCard
-                    quote={t("testimonials.2.quote")}
-                    author={t("testimonials.2.author")}
-                    title={t("testimonials.2.title")}
-                    imageSrc="/img/NaeliaNet.svg"
-                    imageWidth="100"
-                    imageHeight="100"
-                    imageScale="150"
-
-                  />
-                </FadeInOnScroll>
-              </div>
-
-            </div>
-          </div>
-        </FadeInOnScroll>
-      </section> */}
     </main>
   );
 };
