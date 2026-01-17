@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Icon from "./Icon.jsx";
 
-const ServiceCard = ({ iconName, title, subtitle, description, isOpen, onToggle, onClick, href }) => {
+const ServiceCard = ({ iconName, title, shortDescription, details, isOpen, onToggle, onClick, href }) => {
   
   // Contenu interne de la carte
   const content = (
@@ -15,33 +15,35 @@ const ServiceCard = ({ iconName, title, subtitle, description, isOpen, onToggle,
         </div>
       </div>
 
-      {/* Titre & Sous-titre */}
-      <div className="text-center flex-grow">
-        <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 group-hover:text-[#AD9551] transition-colors duration-300">
+      {/* Titre */}
+      <div className="text-center mb-4">
+        <h3 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-[#AD9551] transition-colors duration-300">
             {title}
         </h3>
-        {subtitle && (
-            <h4 className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">
-                {subtitle}
-            </h4>
-        )}
       </div>
 
-      {/* Description (Accordéon) */}
-      <div 
-        className={`overflow-hidden transition-all duration-500 ease-in-out ${
-          isOpen ? "max-h-[500px] opacity-100 mt-4" : "max-h-0 opacity-0"
-        }`}
-      >
-        <p className="text-gray-600 text-center leading-relaxed text-sm md:text-base">
-          {description}
+      {/* Description Courte (Toujours visible) */}
+      <div className="text-center mb-4 flex-grow">
+        <p className="text-gray-600 font-medium leading-relaxed">
+            {shortDescription}
         </p>
       </div>
 
-      {/* Indicateur visuel (Flèche ou Plus) */}
-      <div className="mt-6 flex justify-center opacity-40 group-hover:opacity-100 transition-opacity duration-300">
-         <div className={`p-2 rounded-full border border-gray-200 transition-transform duration-300 ${isOpen ? "rotate-180 bg-gray-50" : "rotate-0"}`}>
-            <Icon name="ChevronDown" className="w-5 h-5 text-gray-400 group-hover:text-[#AD9551]" />
+      {/* Description Détaillée (Accordéon au clic) */}
+      <div 
+        className={`overflow-hidden transition-all duration-500 ease-in-out ${
+          isOpen ? "max-h-[500px] opacity-100 mt-4 border-t border-gray-100 pt-4" : "max-h-0 opacity-0"
+        }`}
+      >
+        <p className="text-gray-600 text-sm md:text-base whitespace-pre-line leading-relaxed text-left pl-4 border-l-2 border-[#AD9551]/30">
+          {details}
+        </p>
+      </div>
+
+      {/* Indicateur visuel (Flèche) */}
+      <div className="mt-6 flex justify-center opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+         <div className={`p-2 rounded-full border border-gray-200 transition-transform duration-300 ${isOpen ? "rotate-180 bg-gray-50 text-[#AD9551]" : "rotate-0 group-hover:border-[#AD9551] group-hover:text-[#AD9551]"}`}>
+            <Icon name="ChevronDown" className="w-5 h-5" />
          </div>
       </div>
     </div>
