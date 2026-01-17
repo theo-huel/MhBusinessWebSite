@@ -9,16 +9,16 @@ import ReactMarkdown from 'react-markdown';
 
 export default function AboutPage() {
     const { t } = useTranslation("about");
-
-    // Classe utilitaire pour les paragraphes standards (évite la répétition)
     const paragraphClass = "text-gray-700 text-base md:text-lg leading-relaxed mb-6";
 
     return (
-        // Correction mt-19 -> pt-24 pour compenser la navbar fixe proprement
-        <main className="pt-24 pb-12 bg-gray-50 min-h-screen">
-            <section className="container mx-auto px-4 md:px-6">
+        // 1. On garde le main propre (sans pt-24)
+        <main className="bg-gray-50 min-h-screen">
+            
+            {/* 2. C'EST ICI LA CORRECTION : Ajout de 'py-12 md:py-20' 
+               Cela ajoute de l'espace en haut et en bas de la section */}
+            <section className="py-16 md:py-16 container mx-auto px-4 md:px-6">
                 
-                {/* Titre Principal */}
                 <FadeInOnScroll delay={0.1}>
                     <SectionTitle
                         title={t("about.title")}
@@ -28,31 +28,28 @@ export default function AboutPage() {
                     />
                 </FadeInOnScroll>
 
-                {/* Carte Contenu Principal */}
+                {/* Le reste de ton code ne change pas... */}
                 <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
                     <div className="p-6 md:p-12">
                         
-                        {/* --- SECTION VALEURS --- */}
                         <div className="text-center mb-16">
                             <FadeInOnScroll delay={0.2}>
                                 <h3 className="text-2xl md:text-4xl font-extrabold text-gray-900 mb-6">
                                     {t("about.valeurs.h3")}
                                 </h3>
-                                {/* Wrapper pour essayer de forcer l'espacement si le composant le permet */}
                                 <div className="flex justify-center items-center gap-2">
                                     <InteractiveWord />
                                 </div>
                             </FadeInOnScroll>
                         </div>
 
-                        {/* --- SECTION MISSION --- */}
                         <FadeInOnScrollLeft delay={0.2}>
                             <div className="mb-16">
                                 <div className="text-center mb-8">
                                     <SectionTitle
                                         title={t("about.mission.h3")}
                                         subtitle={t("about.mission.h2")}
-                                        center // Assure-toi que ton composant SectionTitle accepte une prop pour centrer, sinon retire ça
+                                        center 
                                     />
                                 </div>
 
@@ -60,7 +57,6 @@ export default function AboutPage() {
                                     <p className={paragraphClass}>{t("about.mission.p1")}</p>
                                     <p className={paragraphClass}>{t("about.mission.pp")}</p>
 
-                                    {/* Liste de points forts mise en valeur */}
                                     <div className="my-8 bg-[#AD9551]/5 rounded-xl p-6 border border-[#AD9551]/20">
                                         <div className="text-center font-bold text-[#AD9551] space-y-2 text-lg">
                                             <p>✓ {t("about.mission.pp1")}</p>
@@ -76,7 +72,6 @@ export default function AboutPage() {
 
                         <hr className="my-12 border-gray-100" />
 
-                        {/* --- SECTION VISION --- */}
                         <FadeInOnScrollLeft delay={0.2}>
                             <div className="mb-16">
                                 <div className="text-center mb-8">
@@ -104,7 +99,6 @@ export default function AboutPage() {
                                         <p className={paragraphClass}>{t("about.vision.p6")}</p>
                                     </div>
 
-                                    {/* Citations stylisées - Design "Carte de luxe" */}
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
                                         <blockquote className="bg-[#AD9551]/10 border-l-4 border-[#AD9551] p-6 rounded-r-lg">
                                             <p className="font-serif italic text-lg mb-4 text-gray-800">
@@ -133,7 +127,6 @@ export default function AboutPage() {
 
                         <hr className="my-12 border-gray-100" />
 
-                        {/* --- SECTION PARCOURS --- */}
                         <FadeInOnScrollLeft delay={0.2}>
                             <div>
                                 <h3 className="text-3xl font-extrabold text-gray-900 mb-8 text-center">
@@ -144,7 +137,6 @@ export default function AboutPage() {
                                     <p>{t("about.parcours.p1")}</p>
                                     <p>{t("about.parcours.p2")}</p>
                                     
-                                    {/* Utilisation de prose pour le Markdown pour un meilleur rendu des listes/gras */}
                                     <div className="prose prose-stone max-w-none text-gray-700">
                                         <ReactMarkdown>{t("about.parcours.p3")}</ReactMarkdown>
                                     </div>

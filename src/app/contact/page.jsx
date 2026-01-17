@@ -90,7 +90,7 @@ const ContactPage = () => {
 
 
   return (
-    <main className="pt-10 bg-gray-50 mt-19">
+    <main className="bg-gray-50 min-h-screen">
       <FadeInOnScroll delay={0.2}>
       <section className="py-16 container mx-auto px-6">
         <SectionTitle

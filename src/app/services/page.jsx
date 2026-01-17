@@ -50,7 +50,7 @@ const ServicesPage = () => {
     ];
 
     return (
-        <main className="pt-10 bg-gray-50 mt-19">
+        <main className="bg-gray-50 min-h-screen">
             <section className="py-16 container mx-auto px-6">
                 <FadeInOnScroll delay={0.1}>
                     <SectionTitle

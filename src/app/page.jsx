@@ -64,8 +64,7 @@ export default function Home() {
 
   return (
     // Ajout de pb-10 pour éviter que le footer colle trop
-    <main className="pt-24 pb-10 overflow-x-hidden"> 
-      
+      <main className="pb-10 overflow-x-hidden bg-white">      
       <HeroSection />
 
       {/* --- Section À Propos --- */}
