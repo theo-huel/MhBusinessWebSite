@@ -12,7 +12,7 @@ const Footer = () => {
     { name: t("home.name"), href: "/" },
     { name: t("about.name"), href: "/about" },
     { name: t("services.name"), href: "/services" },
-    { name: t("team.name"), href: "/team" },
+    // { name: t("team.name"), href: "/team" },
     { name: t("contact.name"), href: "/contact" },
   ];
 
@@ -32,9 +32,7 @@ const Footer = () => {
             {navItems.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className="text-gray-400 hover:text-white transition duration-300">
-                    
                   {item.name}
-                  
                 </Link>
               </li>
             ))}
@@ -44,23 +42,51 @@ const Footer = () => {
         {/* Section 3: Contact */}
         <div>
           <h3 className="text-xl font-bold mb-4 text-[#AD9551]">{t("footer.contact")}</h3>
-          <p className="text-gray-400 flex items-center mb-2">
+          
+          {/* Email Cliquable */}
+          <a 
+            href="mailto:matis@mhbusiness.be" 
+            className="text-gray-400 flex items-center mb-2 hover:text-[#AD9551] transition duration-300 w-fit"
+          >
             <Icon name="Mail" className="w-5 h-5 mr-2 text-[#AD9551]" />
             matis@mhbusiness.be
-          </p>
-          <p className="text-gray-400 flex items-center">
+          </a>
+
+          {/* Téléphone Cliquable */}
+          {/* Note: J'ai formaté le numéro dans le href pour qu'il soit international (+32) */}
+          <a 
+            href="tel:+32477644642" 
+            className="text-gray-400 flex items-center hover:text-[#AD9551] transition duration-300 w-fit"
+          >
             <Icon name="Phone" className="w-5 h-5 mr-2 text-[#AD9551]" />
             0477 64 46 42
-          </p>
+          </a>
+
           <div className="flex space-x-4 mt-4">
-            {/* Liens vers les réseaux sociaux (placeholders) */}
-            <a href="#" className="text-gray-400 hover:text-white transition duration-300">
+            {/* Liens vers les réseaux sociaux */}
+            {/* Remplace les href="#" par tes vrais liens (ex: https://www.linkedin.com/in/tonprofil) */}
+            <a 
+              href="https://www.linkedin.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-400 hover:text-white transition duration-300"
+            >
               LinkedIn
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition duration-300">
+            <a 
+              href="https://www.facebook.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-400 hover:text-white transition duration-300"
+            >
               Facebook
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition duration-300">
+            <a 
+              href="https://www.instagram.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-gray-400 hover:text-white transition duration-300"
+            >
               Instagram
             </a>
           </div>

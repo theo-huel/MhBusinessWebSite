@@ -44,24 +44,28 @@ const Navbarlogo = ({ logoSrc = null }) => {
 
   return (
     <>
-      {/* --- BARRE DE NAVIGATION FIXE --- */}
+      {/* --- BARRE DE NAVIGATION --- */}
       <nav 
-        className={`fixed w-full z-50 top-0 transition-all duration-300 border-b border-transparent ${
+        className={`fixed w-full z-50 top-0 transition-all duration-300 
+        /* ICI : La bordure dorée en haut qui ajoute la couleur */
+        border-t-[6px] border-t-[#AD9551] border-b
+        ${
           scrolled || isOpen 
-            ? "bg-white/95 backdrop-blur-md shadow-md border-gray-100" 
-            : "bg-white/90 backdrop-blur-sm"
+            ? "bg-white/95 backdrop-blur-md shadow-md border-b-gray-100" 
+            : "bg-white/90 backdrop-blur-sm border-b-transparent"
         }`}
       >
-        <div className="container mx-auto px-4 md:px-6 py-2 flex items-center justify-between h-[100px] md:h-[100px]">
+        {/* Hauteur réduite à 70px/80px pour remonter le contenu */}
+        <div className="container mx-auto px-4 md:px-6 py-0 flex items-center justify-between h-[70px] md:h-[80px]">
           
           {/* 1. LOGO */}
           <Link href="/" className="flex items-center cursor-pointer z-50 relative shrink-0">
             <Image
               src={logoSrc || "/img/MHBusiness.svg"}
               alt="Logo MH Business"
-              width={150}
-              height={60}
-              className="w-32 md:w-[150px] h-auto object-contain"
+              width={140}
+              height={55}
+              className="w-24 md:w-32 h-auto object-contain"
               priority
             />
           </Link>
@@ -72,41 +76,36 @@ const Navbarlogo = ({ logoSrc = null }) => {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm lg:text-base font-medium transition-colors duration-300 relative group py-2 ${
-                  isActive(item.href) ? "text-[#AD9551]" : "text-gray-700 hover:text-[#AD9551]"
+                className={`text-sm lg:text-base font-medium transition-colors duration-300 relative group py-6 ${
+                  isActive(item.href) ? "text-[#AD9551] font-bold" : "text-gray-700 hover:text-[#AD9551]"
                 }`}
               >
                 {item.name}
-                <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#AD9551] transition-all duration-300 group-hover:w-full ${isActive(item.href) ? "w-full" : ""}`}></span>
+                {/* Soulignement animé */}
+                <span className={`absolute bottom-0 left-0 h-[3px] bg-[#AD9551] transition-all duration-300 group-hover:w-full ${isActive(item.href) ? "w-full" : "w-0"}`}></span>
               </Link>
             ))}
           </div>
 
-          {/* 3. ACTIONS (LANGUE + HAMBURGER) */}
+          {/* 3. ACTIONS */}
           <div className="flex items-center gap-3 z-50 relative shrink-0">
-            
-            {/* Langue */}
             <div className="relative">
               <MyButton
                 onClick={() => setShowLangDropdown(!showLangDropdown)}
                 variant="outline"
-                className="p-2 flex items-center gap-2 border-gray-200 hover:border-[#AD9551] transition-colors rounded-full"
-                aria-label="Changer de langue"
+                className="p-1.5 md:p-2 flex items-center gap-2 border-gray-200 hover:border-[#AD9551] transition-colors rounded-full h-10"
               >
-                <Icon name="Globe" className="w-5 h-5 text-gray-700" />
+                <Icon name="Globe" className="w-4 h-4 md:w-5 md:h-5 text-gray-700" />
                 <span className="text-xs font-semibold text-gray-700 uppercase hidden sm:inline">{i18n.language}</span>
               </MyButton>
-
+              {/* Dropdown Langue */}
               {showLangDropdown && (
-                <div className="absolute right-0 mt-2 w-32 bg-white border border-gray-100 rounded-lg shadow-xl overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
+                <div className="absolute right-0 mt-2 w-32 bg-white border border-gray-100 rounded-lg shadow-xl overflow-hidden animate-in fade-in slide-in-from-top-2">
                   {["fr", "en"].map((lng) => (
                     <button
                       key={lng}
-                      onClick={() => {
-                        i18n.changeLanguage(lng);
-                        setShowLangDropdown(false);
-                      }}
-                      className={`w-full text-left px-4 py-3 text-sm hover:bg-gray-50 transition-colors ${i18n.language === lng ? "text-[#AD9551] font-bold" : "text-gray-600"}`}
+                      onClick={() => { i18n.changeLanguage(lng); setShowLangDropdown(false); }}
+                      className={`w-full text-left px-4 py-3 text-sm hover:bg-gray-50 ${i18n.language === lng ? "text-[#AD9551] font-bold" : "text-gray-600"}`}
                     >
                       {lng === "fr" ? "Français" : "English"}
                     </button>
@@ -115,57 +114,27 @@ const Navbarlogo = ({ logoSrc = null }) => {
               )}
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Burger */}
             <div className="md:hidden">
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="p-2 text-gray-800 focus:outline-none hover:text-[#AD9551] transition-colors"
-                aria-label="Menu"
-              >
-                 <div className="transition-transform duration-300">
-                    {isOpen ? (
-                      <Icon name="X" className="h-8 w-8 text-[#AD9551]" />
-                    ) : (
-                      <Icon name="Menu" className="h-8 w-8" />
-                    )}
-                 </div>
+              <button onClick={() => setIsOpen(!isOpen)} className="p-2 text-gray-800 hover:text-[#AD9551] transition-colors">
+                 <Icon name={isOpen ? "X" : "Menu"} className="h-8 w-8" />
               </button>
             </div>
           </div>
         </div>
       </nav>
 
-      {/* --- CALE INVISIBLE (Le Secret) --- */}
-      {/* Cet élément vide pousse le contenu de tes pages vers le bas */}
-      <div className="h-[80px] md:h-[90px] w-full bg-transparent"></div>
+      {/* CALE INVISIBLE AJUSTÉE À LA NOUVELLE HAUTEUR */}
+      <div className="h-[74px] md:h-[84px] w-full bg-transparent"></div>
 
-      {/* --- 4. MOBILE MENU --- */}
-      <div 
-        className={`fixed inset-0 bg-white z-40 flex flex-col items-center justify-center transition-all duration-500 ease-in-out md:hidden ${
-          isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
-        }`}
-        style={{ top: '0', paddingTop: '0' }} 
-      >
+      {/* MENU MOBILE */}
+      <div className={`fixed inset-0 bg-white z-40 flex flex-col items-center justify-center transition-all duration-500 md:hidden ${isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"}`}>
         <div className="flex flex-col space-y-8 text-center w-full px-8">
           {navItems.map((item, index) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              onClick={() => setIsOpen(false)}
-              className={`text-3xl font-bold transition-all duration-300 ${
-                isActive(item.href) ? "text-[#AD9551]" : "text-gray-800 hover:text-[#AD9551]"
-              }`}
-              style={{ transitionDelay: `${index * 50}ms` }}
-            >
+            <Link key={item.name} href={item.href} onClick={() => setIsOpen(false)} className={`text-3xl font-bold ${isActive(item.href) ? "text-[#AD9551]" : "text-gray-800"}`}>
               {item.name}
             </Link>
           ))}
-          
-          <div className="w-16 h-1 bg-[#AD9551] mx-auto rounded-full mt-8 opacity-50"></div>
-          
-          <p className="text-gray-400 text-sm mt-4 uppercase tracking-widest">
-              MH Business <br/> Excellence & Stratégie
-          </p>
         </div>
       </div>
     </>

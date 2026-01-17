@@ -18,7 +18,7 @@ const CallToAction = ({}) => {
     //    Le blanc va donc remplir l'espace en haut et en bas.
     <div className='bg-white w-full py-10 md:py-20'>
       
-      <section className="bg-white text-[#AD9551] border border-[#AD9551] rounded-xl shadow-lg 
+      <section className="bg-[#AD9551] text-white border border-[#AD9551] rounded-xl shadow-lg 
                           max-w-6xl mx-4 md:mx-auto 
                           py-8 md:py-16"> 
                           {/* J'ai aussi légèrement ajusté le padding interne de la carte */}
@@ -31,7 +31,7 @@ const CallToAction = ({}) => {
 
           <div className="flex justify-center">
             <Link href="/services">
-              <MyButton variant="primary"> 
+              <MyButton variant="secondary" className="text-base px-8 py-4 shadow-xl text-[#AD9551] hover:text-[#8A7641]"> 
                 {t("hero.btn2")}
               </MyButton>
             </Link>
