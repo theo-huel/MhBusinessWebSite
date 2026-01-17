@@ -1,77 +1,76 @@
-"use client"
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import ServiceCard from '../../components/ServiceCard.jsx';
-import SectionTitle from '../../components/SectionTitle.jsx';
-import ContactPage from '../contact/page.jsx';
-import FadeInOnScroll from '@/components/FadeInOnScroll.jsx';
-import FadeInOnScrollBottom from '@/components/FadeInOnScrollBottom.jsx';
+"use client";
 
-const ServicesPage = () => {
-    const { t } = useTranslation("services");
-    const [openIndex, setOpenIndex] = useState(null);
+import Link from "next/link";
+import Icon from "./Icon.jsx";
 
-    const toggleCard = (index) => {
-        setOpenIndex(prev => (prev === index ? null : index));
-    };
+const ServiceCard = ({ iconName, title, shortDescription, details, isOpen, onToggle, onClick, href }) => {
+  
+  // Contenu interne de la carte
+  const content = (
+    <div className="flex flex-col h-full relative z-10">
+      {/* En-tête : Icône dans une bulle dorée légère */}
+      <div className="mb-6 flex justify-center">
+        <div className="w-20 h-20 rounded-full bg-[#AD9551]/10 flex items-center justify-center text-[#AD9551] group-hover:bg-[#AD9551] group-hover:text-white transition-all duration-300 ease-in-out">
+            <Icon name={iconName} className="w-10 h-10" />
+        </div>
+      </div>
 
-    const services = [
-        { iconName: "Map", title: t("services.strategy.title"), description: t("services.strategy.description") },
-        { iconName: "TrendingUp", title: t("services.b2b.title"), description: t("services.b2b.description") },
-        { iconName: "Handshake", title: t("services.coaching.title"), description: t("services.coaching.description") },
-        { iconName: "Share2", title: t("services.network.title"), description: t("services.network.description") },
-        { iconName: "GraduationCap", title: t("services.training.title"), description: t("services.training.description") },
-        { iconName: "Target", title: t("services.web.title"), description: t("services.web.description") }
-    ];
+      {/* Titre */}
+      <div className="text-center mb-4">
+        <h3 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-[#AD9551] transition-colors duration-300">
+            {title}
+        </h3>
+      </div>
 
+      {/* Description Courte (Toujours visible) */}
+      <div className="text-center mb-4 flex-grow">
+        <p className="text-gray-600 font-medium leading-relaxed">
+            {shortDescription}
+        </p>
+      </div>
+
+      {/* Description Détaillée (Accordéon au clic) */}
+      <div 
+        className={`overflow-hidden transition-all duration-500 ease-in-out ${
+          isOpen ? "max-h-[500px] opacity-100 mt-4 border-t border-gray-100 pt-4" : "max-h-0 opacity-0"
+        }`}
+      >
+        <p className="text-gray-600 text-sm md:text-base whitespace-pre-line leading-relaxed text-left pl-4 border-l-2 border-[#AD9551]/30">
+          {details}
+        </p>
+      </div>
+
+      {/* Indicateur visuel (Flèche) */}
+      <div className="mt-6 flex justify-center opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+         <div className={`p-2 rounded-full border border-gray-200 transition-transform duration-300 ${isOpen ? "rotate-180 bg-gray-50 text-[#AD9551]" : "rotate-0 group-hover:border-[#AD9551] group-hover:text-[#AD9551]"}`}>
+            <Icon name="ChevronDown" className="w-5 h-5" />
+         </div>
+      </div>
+    </div>
+  );
+
+  // Classes de base pour le conteneur
+  const baseClasses = `
+    group relative bg-white rounded-2xl p-8 
+    border border-gray-100 shadow-sm hover:shadow-xl 
+    transition-all duration-300 ease-out 
+    cursor-pointer overflow-hidden h-full flex flex-col
+    hover:-translate-y-1 hover:border-[#AD9551]/30
+  `;
+
+  if (href) {
     return (
-        <main className="bg-gray-50 min-h-screen">
-            {/* Section Services avec fond gris très léger */}
-            <section className="py-20 md:py-32 container mx-auto px-4 md:px-6">
-                
-                {/* Titre */}
-                <FadeInOnScroll delay={0.1}>
-                    <SectionTitle
-                        title={t("pageTitle")}
-                        subtitle={t("pageSubtitle")}
-                    />
-                </FadeInOnScroll>
-
-                {/* Grille de cartes */}
-                <div className="max-w-7xl mx-auto mb-24">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10 items-start">
-                        {services.slice(0, 6).map((service, index) => (
-                            // ASTUCE PRO : On met le FadeIn SUR la carte avec un délai calculé (index * 0.1)
-                            // Cela crée un effet de cascade (les cartes apparaissent une par une)
-                            <FadeInOnScrollBottom key={index} delay={index * 0.1}>
-                                <div className="h-full"> {/* h-full assure que toutes les cartes ont la même hauteur */}
-                                    <ServiceCard
-                                        {...service}
-                                        isOpen={openIndex === index}
-                                        onToggle={() => toggleCard(index)}
-                                    />
-                                </div>
-                            </FadeInOnScrollBottom>
-                        ))}
-                    </div>
-
-                    <FadeInOnScroll delay={0.6}>
-                        <div className="text-center mt-16 max-w-2xl mx-auto">
-                            <p className="text-gray-500 italic text-lg border-l-4 border-[#AD9551] pl-4 text-left md:text-center md:border-l-0 md:border-t-4 md:pt-4">
-                                {t("footerNote")}
-                            </p>
-                        </div>
-                    </FadeInOnScroll>
-                </div>
-            </section>
-
-            {/* Section Contact Visuellement Séparée */}
-            {/* J'utilise un fond blanc pour casser la monotonie du gris et mettre le contact en valeur */}
-            <section className="bg-white border-t border-gray-100">
-                 <ContactPage />
-            </section>
-        </main>
+      <Link href={href} aria-label={title} className={baseClasses}>
+        {content}
+      </Link>
     );
+  }
+
+  return (
+    <div onClick={onClick || onToggle} className={baseClasses} role="button" tabIndex={0}>
+      {content}
+    </div>
+  );
 };
 
-export default ServicesPage;
+export default ServiceCard;
