@@ -8,7 +8,7 @@ const logos = [
   { src: '/img/NaeliaNet.svg', alt: 'Logo Client 1', imageWidth: "200", imageHeight: "200", imageScale: "160" },
   { src: '/img/HasanVural.svg', alt: 'Logo Client 2', imageWidth: "200", imageHeight: "200", imageScale: "140" },
     { src: '/img/ItinéraireBis.svg', alt: 'Logo Client 3',imageWidth: "200", imageHeight: "200", imageScale: "140" },
-    { src: '/img/Jtoit.png', alt: 'Logo Client 4' , imageWidth: "200", imageHeight: "200", imageScale: "140" },
+    { src: '/img/Jtoit.jpg', alt: 'Logo Client 4' , imageWidth: "200", imageHeight: "200", imageScale: "140" },
   { src: '/img/logo Degrave.jpg', alt: 'Logo Client 5',imageWidth: "150", imageHeight: "200", imageScale: "100" },
   { src: '/img/imgMegabike.jpg', alt: 'Logo Client 6' ,imageWidth: "100", imageHeight: "200", imageScale: "140" },
 
