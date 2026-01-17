@@ -4,28 +4,24 @@
   "footerNote": "Mon approche est flexible : je peux réaliser ces prestations directement ou vous orienter vers des partenaires de confiance de mon réseau, selon vos besoins et la complexité du projet.",
   "services": {
     "strategy": {
-      "title": "Stratégie d’entreprise & Structuration",
-      "description": "• Diagnostic stratégique (SWOT, Business Model Canvas, etc.)\n• Clarification de la vision, de la mission et des objectifs\n• Structuration de l’offre, de l’organisation interne et des priorités\n• Mise en place de KPIs et d’un plan d’action"
+      "title": "Stratégie & Structuration",
+      "short": "Clarifiez votre vision, structurez votre entreprise et transformez vos objectifs en actions concrètes.",
+      "details": "• Diagnostic stratégique (SWOT, Business Model Canvas…)\n• Clarification de la vision, mission et objectifs\n• Structuration de l’offre, organisation interne et priorités\n• Mise en place de KPIs et plan d’action"
     },
-    "b2b": {
-      "title": "Développement commercial",
-      "description": "• Création ou optimisation de la stratégie commerciale\n• Définition des personas cibles\n• Construction d’un tunnel d’acquisition\n• Outils d’aide à la vente, pitch, formation des équipes\n• Mise en place de partenariats stratégiques"
-    },
-    "coaching": {
-      "title": "Accompagnement personnel & Coaching",
-      "description": "• Suivi d’indicateurs, reporting, ajustements\n• Coaching de dirigeant ou d’équipe commerciale"
+    "commercial": {
+      "title": "Développement Commercial",
+      "short": "Optimisez votre stratégie commerciale et transformez vos prospects en clients.",
+      "details": "• Création ou optimisation de la stratégie commerciale\n• Définition des personas cibles\n• Construction d’un tunnel d’acquisition\n• Outils d’aide à la vente, pitch, formation des équipes\n• Coaching dirigeant et équipes commerciales\n• Mise en place de partenariats stratégiques"
     },
     "network": {
-      "title": "Mise en relation & Réseau professionnel",
-      "description": "• Mise en lien avec des commerciaux indépendants, experts ou prestataires\n• Sourcing de stagiaires et jeunes talents (marketing, finance, RH…)\n• Mise en relation avec des partenaires stratégiques\n• Business Network"
+      "title": "Réseau & Partenariats",
+      "short": "Accédez à un réseau de partenaires, experts et jeunes talents pour accélérer votre croissance.",
+      "details": "• Mise en lien avec commerciaux indépendants, experts ou prestataires\n• Sourcing de stagiaires et jeunes talents (marketing, finance, RH…)\n• Mise en relation avec partenaires stratégiques\n• Business networking"
     },
-    "training": {
-      "title": "Formations & Ateliers stratégiques",
-      "description": "• Ateliers sur-mesure (stratégie, business model, prospection…)\n• Formations à la vente B2B\n• Séminaires pour dirigeants ou commerciaux"
-    },
-    "web": {
-      "title": "Stratégie marketing & Visibilité digitale",
-      "description": "• Création et optimisation de pages LinkedIn \n• Stratégie editoriale \n•  Création de sites web One-Page modernes et performants \n• Image de marque \n•"
+    "marketing": {
+      "title": "Marketing & Stratégie Digitale",
+      "short": "Optimisez votre présence digitale et vos outils pour booster vos résultats business.",
+      "details": "• Gestion et optimisation de pages LinkedIn et autres réseaux professionnels\n• Conseils sur les outils digitaux et ERP pour structurer votre activité\n• Stratégie digitale orientée visibilité et performance, sans référencement SEO\n• Accompagnement sur l’image de marque et la communication digitale"
     }
   }
 }
