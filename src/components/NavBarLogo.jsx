@@ -1,21 +1,24 @@
-"use client";
 
-import { useState, useEffect } from "react";
+'use client';
+
+import React, { useState, useEffect } from "react";
+import MyButton from "./MyButton.jsx";
+import Image from "next/image";
 import Link from "next/link";
-import Image from "next/image"; // Assurez-vous d'avoir configuré next/image
 import { useTranslation } from "react-i18next";
+import i18n from "../../i18n.js";
+import Icon from "../components/Icon.jsx";
 import { usePathname } from "next/navigation";
 
-// Si vous avez un composant Icon, importez-le, sinon j'utilise des SVG inline ci-dessous
-// import Icon from './Icon'; 
+const Navbarlogo = ({ logoSrc = null }) => {
+  const { t } = useTranslation("navbar");
+  const pathname = usePathname(); // Pour savoir sur quelle page on est
 
-const Navbar = () => {
-  const { t } = useTranslation("common"); // Ou 'home' selon votre config
   const [isOpen, setIsOpen] = useState(false);
+  const [showLangDropdown, setShowLangDropdown] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const pathname = usePathname();
 
-  // Effet pour détecter le scroll et ajouter l'effet "Glassmorphism"
+  // Détection du scroll pour ajouter une ombre seulement quand on descend
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -24,7 +27,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Effet pour bloquer le scroll du body quand le menu est ouvert
+  // Empêcher le scroll du body quand le menu mobile est ouvert
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -33,116 +36,144 @@ const Navbar = () => {
     }
   }, [isOpen]);
 
-  // Fonction pour fermer le menu quand on clique sur un lien
-  const closeMenu = () => setIsOpen(false);
-
-  // Liste des liens (à adapter selon vos pages)
-  const navLinks = [
-    { name: "Accueil", href: "/" },
-    { name: "Services", href: "/services" },
-    { name: "À propos", href: "/about" },
-    { name: "Contact", href: "/contact" },
+  const navItems = [
+    { name: t("home.name"), href: "/" },
+    { name: t("about.name"), href: "/about" },
+    { name: t("services.name"), href: "/services" },
+    { name: t("contact.name"), href: "/contact" },
   ];
 
-  return (
-    <header 
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled || isOpen ? "bg-white/95 backdrop-blur-md shadow-sm" : "bg-white"
-      }`}
-    >
-      <div className="container mx-auto px-4 md:px-6 h-20 flex justify-between items-center">
-        
-        {/* LOGO */}
-        <Link href="/" className="relative z-50" onClick={closeMenu}>
-           {/* Remplacez src par votre chemin de logo réel */}
-           {/* J'utilise du texte stylisé temporairement si vous n'avez pas l'image sous la main */}
-           <div className="flex flex-col items-center leading-none">
-             <span className="text-3xl font-serif font-bold text-black">MH</span>
-             <span className="text-[0.6rem] tracking-widest text-[#AD9551] uppercase">Business</span>
-           </div>
-        </Link>
+  // Fonction pour vérifier si le lien est actif
+  const isActive = (path) => pathname === path;
 
-        {/* NAVIGATION DESKTOP (Cachée sur mobile) */}
-        <nav className="hidden md:flex space-x-8 items-center">
-          {navLinks.map((link) => (
-            <Link 
-              key={link.href} 
-              href={link.href}
-              className={`text-sm font-medium uppercase tracking-wide hover:text-[#AD9551] transition-colors ${
-                pathname === link.href ? "text-[#AD9551]" : "text-gray-800"
+  return (
+    <>
+      <nav 
+        className={`fixed w-full z-50 top-0 transition-all duration-300 ${
+          scrolled || isOpen ? "bg-white/95 backdrop-blur-md shadow-md" : "bg-white/90 backdrop-blur-sm"
+        }`}
+      >
+        <div className="container mx-auto px-4 md:px-6 py-3 flex items-center justify-between">
+          
+          {/* --- 1. LOGO --- */}
+          <Link href="/" className="flex items-center cursor-pointer z-50 relative">
+            <Image
+              src={logoSrc || "/img/MHBusiness.svg"}
+              alt="Logo MH Business"
+              width={140} // Un peu plus petit pour mobile par défaut
+              height={55}
+              className="w-32 md:w-[150px] h-auto object-contain" // Responsive width
+              priority
+            />
+          </Link>
+
+          {/* --- 2. DESKTOP NAVIGATION --- */}
+          <div className="hidden md:flex flex-grow justify-center space-x-10">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={`text-sm lg:text-base font-medium transition-colors duration-300 relative group ${
+                  isActive(item.href) ? "text-[#AD9551]" : "text-gray-700 hover:text-[#AD9551]"
+                }`}
+              >
+                {item.name}
+                {/* Petit soulignement animé au survol */}
+                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-[#AD9551] transition-all duration-300 group-hover:w-full ${isActive(item.href) ? "w-full" : ""}`}></span>
+              </Link>
+            ))}
+          </div>
+
+          {/* --- 3. ACTIONS (LANGUE + HAMBURGER) --- */}
+          <div className="flex items-center gap-3 z-50 relative">
+            
+            {/* Sélecteur de langue */}
+            <div className="relative">
+              <MyButton
+                onClick={() => setShowLangDropdown(!showLangDropdown)}
+                variant="outline"
+                className="p-2 flex items-center gap-2 border-gray-200 hover:border-[#AD9551] transition-colors"
+                aria-label="Changer de langue"
+              >
+                <Icon name="Globe" className="w-5 h-5 text-gray-700" />
+                <span className="text-xs font-semibold text-gray-700 uppercase">{i18n.language}</span>
+              </MyButton>
+
+              {showLangDropdown && (
+                <div className="absolute right-0 mt-2 w-32 bg-white border border-gray-100 rounded-lg shadow-xl overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
+                  {["fr", "en"].map((lng) => (
+                    <button
+                      key={lng}
+                      onClick={() => {
+                        i18n.changeLanguage(lng);
+                        setShowLangDropdown(false);
+                      }}
+                      className={`w-full text-left px-4 py-3 text-sm hover:bg-gray-50 transition-colors ${i18n.language === lng ? "text-[#AD9551] font-bold" : "text-gray-600"}`}
+                    >
+                      {lng === "fr" ? "Français" : "English"}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Mobile Menu Button */}
+            <div className="md:hidden">
+              <MyButton
+                onClick={() => setIsOpen(!isOpen)}
+                variant="ghost" // 'ghost' ou 'outline' selon votre composant, ici j'enlève la bordure pour le style
+                className="p-2 text-gray-800 focus:outline-none"
+                aria-label="Menu"
+              >
+                 {/* Animation simple de l'icône */}
+                 <div className="transition-transform duration-300">
+                    {isOpen ? (
+                      <Icon name="X" className="h-7 w-7 text-[#AD9551]" />
+                    ) : (
+                      <Icon name="Menu" className="h-7 w-7" />
+                    )}
+                 </div>
+              </MyButton>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* --- 4. MOBILE MENU FULLSCREEN OVERLAY --- */}
+      {/* On sort le menu de la balise nav pour qu'il prenne tout l'écran.
+         On utilise une translation Y pour le faire descendre du haut.
+      */}
+      <div 
+        className={`fixed inset-0 bg-white z-40 flex flex-col items-center justify-center transition-all duration-500 ease-in-out md:hidden ${
+          isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"
+        }`}
+        style={{ top: '0', paddingTop: '80px' }} // Laisse la place pour le header fixe
+      >
+        <div className="flex flex-col space-y-8 text-center w-full px-8">
+          {navItems.map((item, index) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              onClick={() => setIsOpen(false)}
+              className={`text-2xl font-bold transition-all duration-300 ${
+                isActive(item.href) ? "text-[#AD9551]" : "text-gray-800 hover:text-[#AD9551]"
               }`}
+              // Petit délai pour une animation en cascade sympa
+              style={{ transitionDelay: `${index * 50}ms` }}
             >
-              {link.name}
+              {item.name}
             </Link>
           ))}
           
-          {/* Bouton Langue Desktop */}
-          <button className="border border-[#AD9551] rounded-full p-2 hover:bg-[#AD9551] hover:text-white transition-colors">
-            <GlobeIcon className="w-5 h-5" />
-          </button>
-        </nav>
-
-        {/* CONTROLES MOBILE (Globe + Burger) */}
-        <div className="flex items-center gap-4 md:hidden z-50">
+          <div className="w-16 h-1 bg-[#AD9551] mx-auto rounded-full mt-8 opacity-50"></div>
           
-          {/* Bouton Langue Mobile */}
-          <button className="border border-[#AD9551] text-[#AD9551] rounded-full p-2">
-            <GlobeIcon className="w-5 h-5" />
-          </button>
-
-          {/* Bouton Hamburger Animé */}
-          <button 
-            onClick={() => setIsOpen(!isOpen)}
-            className="border border-[#AD9551] text-[#AD9551] rounded-full p-2 w-10 h-10 flex flex-col justify-center items-center gap-1.5 focus:outline-none"
-            aria-label="Toggle menu"
-          >
-            <span className={`block w-5 h-0.5 bg-current transition-transform duration-300 ${isOpen ? "rotate-45 translate-y-2" : ""}`} />
-            <span className={`block w-5 h-0.5 bg-current transition-opacity duration-300 ${isOpen ? "opacity-0" : ""}`} />
-            <span className={`block w-5 h-0.5 bg-current transition-transform duration-300 ${isOpen ? "-rotate-45 -translate-y-2" : ""}`} />
-          </button>
+          <p className="text-gray-400 text-sm mt-4">
+             MH Business <br/> Excellence & Stratégie
+          </p>
         </div>
-
-        {/* MENU MOBILE OVERLAY */}
-        <div 
-          className={`fixed inset-0 bg-white z-40 flex flex-col justify-center items-center transition-transform duration-300 ease-in-out ${
-            isOpen ? "translate-x-0" : "translate-x-full"
-          }`}
-          style={{ top: '0', height: '100dvh' }} // 100dvh gère mieux les barres de navigateurs mobiles
-        >
-          <nav className="flex flex-col space-y-8 text-center">
-            {navLinks.map((link) => (
-              <Link 
-                key={link.href} 
-                href={link.href}
-                onClick={closeMenu}
-                className={`text-2xl font-serif font-bold ${
-                  pathname === link.href ? "text-[#AD9551]" : "text-gray-900"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
-            
-            {/* Bouton d'action dans le menu mobile (optionnel) */}
-            <Link href="/contact" onClick={closeMenu} className="mt-8">
-               <span className="px-8 py-3 bg-[#AD9551] text-white rounded-full font-medium">
-                 Discutons-en
-               </span>
-            </Link>
-          </nav>
-        </div>
-
       </div>
-    </header>
+    </>
   );
 };
 
-// Petit composant Icone Globe pour l'exemple
-const GlobeIcon = ({ className }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={className}>
-    <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S12 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S12 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m-15.686 0A8.959 8.959 0 013 12c0-.778.099-1.533.284-2.253m0 0A11.953 11.953 0 0112 10.5c2.998 0 5.74-1.1 7.843-2.918" />
-  </svg>
-);
-
-export default Navbar;
-
+export default Navbarlogo;
